@@ -1,0 +1,200 @@
+{
+  "root": "public/",
+  "headers": {
+    "/**": {
+      "Cache-Control": "public, max-age=0, must-revalidate"
+    },
+    "/**.css": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    },
+    "/**.js": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    },
+    "/static/**": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    },
+    "/icons/*.png": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    }
+  },
+  "redirects": {
+    "/privacy.html": {
+      "url": "/privacy-policy/",
+      "status": 301
+    },
+    "/insights/liquidation/": {
+      "url": "/insights/what-is-business-liquidation/",
+      "status": 301
+    },
+    "/insights/what-is-voluntary-administration/": {
+      "url": "/",
+      "status": 301
+    },
+    "/insights/business-debt-management/": {
+      "url": "/insights/debt-management-tips-company-directors/",
+      "status": 301
+    },
+    "/terms.html": {
+      "url": "/",
+      "status": 301
+    },
+    "/insights/voluntary-administration/page/3/": {
+      "url": "/",
+      "status": 301
+    },
+    "/insights/voluntary-administration/page/2/": {
+      "url": "/",
+      "status": 301
+    },
+    "/insights/page/7/": {
+      "url": "/",
+      "status": 301
+    },
+    "/insights/page/6/": {
+      "url": "/",
+      "status": 301
+    },
+    "/insights/page/5/": {
+      "url": "/",
+      "status": 301
+    },
+    "/insights/page/4/": {
+      "url": "/",
+      "status": 301
+    },
+    "/insights/page/3/": {
+      "url": "/",
+      "status": 301
+    },
+    "/insights/page/2/": {
+      "url": "/",
+      "status": 301
+    },
+    "/insights/business-restructure/page/2/": {
+      "url": "/",
+      "status": 301
+    },
+    "/insights/case-studies/": {
+      "url": "/",
+      "status": 301
+    },
+    "/insights/latest-news-mackay-goodwin-announces-new-advisory-department/": {
+      "url": "/",
+      "status": 301
+    },
+    "/insights/business-restructure/": {
+      "url": "/",
+      "status": 301
+    },
+    "/insights/business-debt-management/page/2/": {
+      "url": "/",
+      "status": 301
+    },
+    "/insights/3-essential-actions-take-temporary-safe-harbour-ends-31-december-2020/": {
+      "url": "/",
+      "status": 301
+    },
+    "/insights/accountant-advice/": {
+      "url": "/",
+      "status": 301
+    },
+    "/faqs.php": {
+      "url": "/",
+      "status": 301
+    },
+    "/expertsinbusiness/": {
+      "url": "/",
+      "status": 301
+    },
+    "/business-survival-pack/": {
+      "url": "/",
+      "status": 301
+    },
+    "/10-signs-your-business-needs-a-corporate-advisor/":{
+      "url": "/insights/10-signs-business-needs-corporate-advisor/",
+      "status": 301
+    },
+    "/10-signs-your-business-needs-to-be-restructured/":{
+      "url": "/insights/10-signs-business-needs-restructured/",
+      "status": 301
+    },
+    "/10-steps-to-getting-your-business-out-of-debt/":{
+      "url": "/insights/10-steps-getting-business-debt/",
+      "status": 301
+    },
+    "/5-reasons-to-consider-voluntary-administration/":{
+      "url": "/insights/5-reasons-consider-voluntary-administration/",
+      "status": 301
+    },
+    "/5-signs-your-business-is-in-financial-trouble/":{
+      "url": "/insights/5-signs-business-financial-trouble/",
+      "status": 301
+    },
+    "/9-tips-for-managing-business-tax-debt/":{
+      "url": "/insights/9-tips-managing-business-tax-debt/",
+      "status": 301
+    },
+    "/a-guide-to-business-insolvency/":{
+      "url": "/insights/a-guide-to-business-insolvency/",
+      "status": 301
+    },
+    "/the-accountants-guide-to-working-with-a-voluntary-administrator/":{
+      "url": "/insights/accountants-guide-working-voluntary-administrator/",
+      "status": 301
+    },
+    "/how-to-avoid-company-bankruptcy-or-liquidation/":{
+      "url": "/insights/avoid-company-bankruptcy-liquidation/",
+      "status": 301
+    },
+    "/the-benefits-of-debt-financing-for-your-business/":{
+      "url": "/insights/benefits-debt-financing-business/",
+      "status": 301
+    },
+    "/building-developer/":{
+      "url": "/insights/building-developer-case-study/",
+      "status": 301
+    },
+    "/debt-management-tips-for-company-directors/":{
+      "url": "/insights/debt-management-tips-company-directors/",
+      "status": 301
+    },
+    "/how-to-conduct-a-successful-business-restructure/":{
+      "url": "/insights/conduct-successful-business-restructure/",
+      "status": 301
+    },
+    "/earth-moving-company/":{
+      "url": "/insights/earthmoving-company-case-study/",
+      "status": 301
+    },
+    "/what-is-business-liquidation/":{
+      "url": "/insights/what-is-business-liquidation/",
+      "status": 301
+    },
+    "/why-you-need-a-budget-for-your-business/":{
+      "url": "/insights/need-budget-business/",
+      "status": 301
+    },
+    "/the-accountants-guide-to-working-with-a-voluntary-administrator":{
+      "url": "/insights/accountants-guide-working-voluntary-administrator/",
+      "status": 301
+    },
+    "/10-steps-to-getting-your-business-out-of-debt":{
+      "url": "/insights/what-is-business-liquidation/",
+      "status": 301
+    },
+    "/building-developer":{
+      "url": "/insights/10-steps-getting-business-debt/",
+      "status": 301
+    },
+    "/debt-management-tips-for-company-directors":{
+      "url": "/insights/debt-management-tips-company-directors/",
+      "status": 301
+    },
+    "/why-you-need-a-budget-for-your-business":{
+      "url": "/insights/need-budget-business/",
+      "status": 301
+    }
+  },
+  "https_only": true,
+  "error_page": "404.html"
+}
