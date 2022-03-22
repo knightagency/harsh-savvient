@@ -35,7 +35,7 @@ const Container = (props) => (
 				</div>
 			</div>
 			<div className="row">
-				<Slider {...settings} className="testimonial-slider">
+				<Slider {...settings} className="testimonial-slider" key={Math.random()}>
 					{props.data.map((d, key) => {
 						return <Slide
 							data={d}

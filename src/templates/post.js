@@ -65,13 +65,14 @@ const Post = ({ data }) => {
         text={''}
         bannerImg={data.wpPost?.featuredImage?.node}
         breadCrumbs={breadCrumbs}
-        btn={typeof window !== 'undefined' && window.location.pathname === '/insights/business-survival-pack/' ? false : true}
-        btnTxt={data.wpPost.backInBusiness?.eventStatus == 'enablevideoaccess' ? 'Watch Now' : data.wpPost.backInBusiness?.buttonLabel}
+        // btn={typeof window !== 'undefined' && window.location.pathname === '/insights/business-survival-pack/' ? false : true}
+        btn={false}
+        btnTxt={data.wpPost.backInBusiness?.eventStatus == '' ? '' : (data.wpPost.backInBusiness?.eventStatus == 'enablevideoaccess' ? 'Watch Now' : data.wpPost.backInBusiness?.buttonLabel)}
         sendUrl={data.wpPost.backInBusiness?.eventStatus == 'enablevideoaccess' ? data.wpPost.backInBusiness.recordingUrl?.url : data.wpPost.backInBusiness?.registerUrl}
         downloadBtn2={typeof window !== 'undefined' && window.location.pathname === '/insights/business-survival-pack/' ? true : false}
       />
 
-      {/* <Link className="bt-big px-4 mx-4" to={props.data.eventsOption?.recordingUrl?.url}>Watch Now <i className="fa fa-chevron-right" aria-hidden="true"></i></Link> */}
+
       <div className="container">
         <div className="row">
           <div className="col-sm-12 col-md-8 detailPost">

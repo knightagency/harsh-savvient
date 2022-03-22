@@ -1,89 +1,100 @@
-import * as React from "react"
-import Slider from "react-slick";
-import { Link } from "gatsby";
-import Buttons from "./buttons";
-import { useRef } from "react";
+import React, { useRef } from "react";
+import lottie from "lottie-web";
+import desktopSlider from "./secondslider.json";
+import mobileSlider from "./secondslider-mobile.json";
+import smoothscroll from 'smoothscroll-polyfill';
+import { navigate } from 'gatsby';
 
-const serviceSettings = {
-  arrows: false,
-  infinite: false,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  dots: false,
-  responsive: [
-    {
-      breakpoint: 767,
-      settings: {
-        slidesToShow: 1
-      }
-    }
-  ],
-  afterChange: index => {
-    const tiles = document.getElementsByClassName('sliderBtn');
-    for (var i = 0; i < tiles.length; i++) {
-      tiles[i].classList.remove("active");
-    }
-    document.getElementById('serviceSlidekey' + Math.round(index)).classList.add('active');
-
-    if (window.screen.width < 500) {
-      document.getElementById('service-option-container').style.marginLeft = Math.round(index) * -25 + '%';
-    }
-    else {
-      document.getElementById('service-option-container').style.marginLeft = '0px';
-    }
-  }
-}
 
 const Container = (props) => {
-  const slide = useRef(null);
+  smoothscroll.polyfill();
+  const isBrowser = typeof window !== "undefined"
+  const [sheight,setHeight] = React.useState(isBrowser?window.scrollY:0);
   React.useEffect(() => {
-    let cT = 0;
-    window.addEventListener('scroll', function (e) {
-      if (document.getElementById('services') !== "null" && window.pageYOffset > document.getElementById('services').offsetTop) {
-        //console.log(e);
-        const ul = document.getElementById("service-option-container");
-        if (!ul.children[ul.children.length - 1].children[0].classList.contains('active')) {
-          window.scrollTo(0, document.getElementById('services').offsetTop)
-          if (cT === 0) {
-            document.querySelectorAll('#services .sliderBtn').forEach(n => n.classList.remove('active'))
-            slide.current.slickNext();
-            cT = 1;
-          }
-          setTimeout(() => {
-            cT = 0;
-          },1500)
-        }
-        //e.preventDefault();
-      }
+    var animDuration = 10000;
+    const anim = lottie.loadAnimation({
+      container: document.getElementById('serviceslider'),
+      renderer: "svg",
+      loop: false,
+      autoplay: false,
+      animationData: window.outerWidth<=1024?mobileSlider:desktopSlider
     });
-  }, [])
+    lottie.setSpeed(0);
+
+    function animatebodymovin(duration) {
+      const scrollPosition = window.scrollY;
+      const maxFrames = anim.totalFrames;
+      setHeight(scrollPosition);
+      const frame = (maxFrames / 1) * (scrollPosition / (duration / 1));
+      if(frame<190){
+        anim.goToAndStop(frame, true);
+      }
+    }
+    const onScroll = () => {
+      animatebodymovin(animDuration);
+    };
+
+    const onBtnClick = (e) => {
+      if(e.target.id=='slide0'){
+        window.scrollTo({top: 1200, left: 0, behavior: 'smooth' });
+      }
+      if(e.target.id=='slide1'){
+        window.scrollTo({top: 2195, left: 0, behavior: 'smooth' });
+      }
+      if(e.target.id=='slide2'){
+        window.scrollTo({top: 2900, left: 0, behavior: 'smooth' });
+      }
+      if(e.target){
+        if (e.target.href) {
+          if(e.target.href.animVal=='images/img_2.jpg'){
+            navigate('/corporate-advisory/');
+          }
+        }
+        else if(e.target.tagName=='path' && window.scrollY>1200 && window.scrollY<2500){
+          navigate('/restructuring/');
+        }
+        else if(e.target.tagName=='path' && window.scrollY>2500 && window.scrollY<3000){
+          navigate('/insolvency/');
+        }
+      }
+    };
+
+
+
+    document.addEventListener("scroll", onScroll);
+    document.addEventListener("click", onBtnClick);
+
+    return () => {
+      anim.destroy();
+      document.removeEventListener("scroll", onScroll);
+    };
+  }, []);
   return <section id="services">
-    <div className="container">
+    
+    <div className="container slider_height"><div className="slider_inner">
       <div className="row">
         <div className="col">
           <h2>{props.serviceTitle}</h2>
         </div>
       </div>
-      <Buttons buttonData={props.data} refSlide={slide} />
-      <div className="row service-slider offset-md-2 offset-lg-2" id="service-slider">
-        <Slider ref={slide} {...serviceSettings} className="services-slider">
-          {props.data.map((d, i) => {
-            return <div className="" key={i}>
-              <div className="col-11 col-md-6 col-lg-6 service-slide">
-                <div className={"serv-img-container img" + i}>
-                  <div className="test position-relative">
-                    <img className="img-fluid service-image" src={d.serviceImage?.mediaItemUrl} alt={d.serviceImage?.altText} />
-                  </div>
-                  <div className={"ctn" + i}>
-                    <h2>{d.serviceTitle}</h2>
-                    <p>{d.serviceDecription}</p>
-                    <Link to={d.servicePageUrl} className="btn btn-primary">Learn more</Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          })}
-        </Slider>
+      <div className="slider_fix" style={sheight>767 && sheight<2901?{ position: "fixed",left: "0", right:"0", top: "100px"}:{ position: "relative", top: sheight<=767?"0px":"1980px"}}>
+        <div className="justify-content-center serviceBtn-container">
+          <ul className="service-option-container service_menu" id="service-option-container">
+            <li className="service-option">
+              <button className={sheight<=1200?"btn sliderBtn active":"btn sliderBtn"} id={"slide0"}>Corporate Advisory</button>
+            </li>
+            <li className="service-option">
+              <button className={sheight<=2195 && sheight>1200?"btn sliderBtn active":"btn sliderBtn"} id={"slide1"}>Restructuring</button>
+            </li>
+            <li className="service-option">
+              <button className={sheight>2195?"btn sliderBtn active":"btn sliderBtn"} id={"slide2"}>Insolvency</button>
+            </li>
+          </ul>  
+        </div>
+        <div className="row service-slider" id="service-slider">
+          <div className="services-slider" id="serviceslider"></div>
+        </div>
+      </div>
       </div>
     </div>
   </section>

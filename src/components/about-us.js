@@ -31,4 +31,5 @@ const AboutUs = (props) => (
     </div>
   </section>
 )
+
 export default AboutUs

@@ -18,6 +18,7 @@ const Header = () => {
           document.getElementsByClassName('small-logo')[0].classList.remove('d-none')
           document.getElementsByClassName('over-nav')[0].classList.remove('d-none')
           document.getElementsByClassName('below-nav')[0].classList.remove('d-flex')
+          document.getElementsByClassName('mainnav')[0].classList.add('fnav')
         } else {
           document.getElementsByClassName('small-logo')[0].classList.remove('d-flex')
           document.getElementsByClassName('over-nav')[0].classList.remove('d-flex')
@@ -25,6 +26,7 @@ const Header = () => {
           document.getElementsByClassName('small-logo')[0].classList.add('d-none')
           document.getElementsByClassName('over-nav')[0].classList.add('d-none')
           document.getElementsByClassName('below-nav')[0].classList.add('d-flex')
+          document.getElementsByClassName('mainnav')[0].classList.remove('fnav')
         }
       }
     } else {
@@ -38,7 +40,7 @@ const Header = () => {
   }, []);
 
   return <header>
-    <nav className="navbar navbar-light bg-light position-fixed col-12 desktopNav">
+    <nav className="navbar navbar-light bg-light position-fixed col-12 desktopNav mainnav">
       <div className="container">
         <Link className="navbar-brand small-logo d-none" to="/">
           <img src={MackeySmall} alt="logo" />
@@ -55,14 +57,15 @@ const Header = () => {
               <li className="p-2"><Link className="dropdown-item" to="/insolvency/">Insolvency</Link></li>
             </ul>
           </li>
-          <li className="nav-item p-3 dropdown" onMouseOver={(t) => { t.currentTarget.classList.add('show'); }} onMouseOut={(t) => { t.currentTarget.classList.remove('show'); }}>
+          {/*<li className="nav-item p-3 dropdown" onMouseOver={(t) => { t.currentTarget.classList.add('show'); }} onMouseOut={(t) => { t.currentTarget.classList.remove('show'); }}>
             <Link className="nav-link" to="/insights/">Insights</Link>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li className="p-2"><Link className="dropdown-item" to="/deal-hub/">Deal Hub</Link></li>
               <li className="p-2"><Link className="dropdown-item" to="/news/">News & articles</Link></li>
               <li className="p-2"><Link className="dropdown-item" to="/back-in-business/">Case studies</Link></li>
-              <li className="p-2"><Link className="dropdown-item" to="/insights/#careers">Deal Hub</Link></li>
+              
             </ul>
-          </li>
+          </li>*/}
           <li className="nav-item p-3 dropdown" onMouseOver={(t) => { t.currentTarget.classList.add('show'); }} onMouseOut={(t) => { t.currentTarget.classList.remove('show'); }}>
             <Link className="nav-link" to="/mg-way/" tabIndex="-1" aria-disabled="true">The MG Way</Link>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -78,9 +81,15 @@ const Header = () => {
               MG Academy
             </Link> */}
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li className="p-2"><Link className="dropdown-item" to="/insights/">Insights</Link></li>
+              <li className="p-2"><Link className="dropdown-item" to="/news/">News & articles</Link></li>
               <li className="p-2"><Link className="dropdown-item" to="/events/">Events</Link></li>
+              <li className="p-2"><Link className="dropdown-item" to="#">Incubator Program</Link></li>
             </ul>
           </li>
+          <li className="nav-item p-3">
+              <Link className="nav-link" to="/identifix/" aria-disabled="true">Identifix</Link>
+            </li>
           <li className="nav-item p-3">
             {/* <a className="nav-link" href="#" tabIndex="-1" aria-disabled="true">Contact</a> */}
             <Link className="nav-link" to="/contact/" aria-disabled="true">Contact</Link>
@@ -94,7 +103,7 @@ const Header = () => {
             <a className="nav-link" aria-current="page" href="/contact/">Get expert advice <i className="fa fa-chevron-right"></i></a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" aria-current="page" href="https://core.ips-docs.com/">Creditor portal <i className="fa fa-chevron-right"></i></a>
+            <a className="nav-link" aria-current="page" href="/creditor-portal/">Creditor portal <i className="fa fa-chevron-right"></i></a>
           </li>
         </ul>
       </div>
@@ -120,14 +129,15 @@ const Header = () => {
                 <li className="p-2"><Link className="dropdown-item" to="/insolvency/">Insolvency</Link></li>
               </ul>
             </li>
-            <li className="nav-item p-3 dropdown" onMouseOver={(t) => { t.currentTarget.classList.add('show'); }} onMouseOut={(t) => { t.currentTarget.classList.remove('show'); }}>
+            {/* <li className="nav-item p-3 dropdown" onMouseOver={(t) => { t.currentTarget.classList.add('show'); }} onMouseOut={(t) => { t.currentTarget.classList.remove('show'); }}>
               <Link className="nav-link" to="/insights/">Insights</Link>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li className="p-2"><Link className="dropdown-item" to="/deal-hub/">Deal Hub</Link></li>
                 <li className="p-2"><Link className="dropdown-item" to="/news/">News & articles</Link></li>
                 <li className="p-2"><Link className="dropdown-item" to="/back-in-business/">Case studies</Link></li>
-                <li className="p-2"><Link className="dropdown-item" to="/insights/#careers">Deal Hub</Link></li>
+                
               </ul>
-            </li>
+            </li>*/}
             <li className="nav-item p-3 dropdown" onMouseOver={(t) => { t.currentTarget.classList.add('show'); }} onMouseOut={(t) => { t.currentTarget.classList.remove('show'); }}>
               <Link className="nav-link" to="/mg-way/" tabIndex="-1" aria-disabled="true">The MG Way</Link>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -143,8 +153,14 @@ const Header = () => {
                 MG Academy
               </Link> */}
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li className="p-2"><Link className="dropdown-item" to="/events/">Events</Link></li>
+                <li className="p-2"><Link className="dropdown-item" to="/insights/">Insights</Link></li>
+              <li className="p-2"><Link className="dropdown-item" to="/news/">News & articles</Link></li>
+              <li className="p-2"><Link className="dropdown-item" to="/events/">Events</Link></li>
+              <li className="p-2"><Link className="dropdown-item" to="#">Incubator Program</Link></li>
               </ul>
+            </li>
+            <li className="nav-item p-3">
+              <Link className="nav-link" to="/identifix/" aria-disabled="true">Identifix</Link>
             </li>
             <li className="nav-item p-3">
               <Link className="nav-link" to="/contact/" aria-disabled="true">Contact</Link>
@@ -163,7 +179,7 @@ const Header = () => {
             <a className="nav-link" aria-current="page" href="/contact/">Get expert advice <i className="fa fa-chevron-right"></i></a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" aria-current="page" href="https://core.ips-docs.com/">Creditor portal <i className="fa fa-chevron-right"></i></a>
+            <a className="nav-link" aria-current="page" href="/creditor-portal/">Creditor portal <i className="fa fa-chevron-right"></i></a>
           </li>
         </ul>
       </div>
@@ -187,7 +203,7 @@ const Header = () => {
               <a className="nav-link" aria-current="page" href="/contact/">Get expert advice <i className="fa fa-chevron-right"></i></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="https://core.ips-docs.com/">Creditor portal <i className="fa fa-chevron-right"></i></a>
+              <a className="nav-link" aria-current="page" href="/creditor-portal/">Creditor portal <i className="fa fa-chevron-right"></i></a>
             </li>
           </ul>
         </div>
@@ -206,18 +222,19 @@ const Header = () => {
               </ul>
             </div>
           </li>
-          <li className="nav-item sub-menu"><Link className="nav-link" to="/insights/">Insights</Link>
+          {/* <li className="nav-item sub-menu"><Link className="nav-link" to="/insights/">Insights</Link>
             <input type="checkbox" id="menu-2" />
             <div id="menu-cont-2">
               <div className="mobile-logo black-logo text-center"><img src="https://res.cloudinary.com/mbsaiyed/image/upload/v1625481695/svg/mobile-logo.svg" alt="" /></div>
               <ul className="menu-ul">
                 <label className="menu-label" htmlFor="menu-2">Menu</label>
+                <li className="nav-item"><Link className="dropdown-item" to="/deal-hub/">Deal Hub</Link></li>
                 <li className="nav-item"><Link className="dropdown-item" to="/news/">News & articles</Link></li>
                 <li className="nav-item"><Link className="dropdown-item" to="/back-in-business/">Case studies</Link></li>
-                <li className="nav-item"><Link className="dropdown-item" to="/insights/#careers">Deal Hub</Link></li>
+                
               </ul>
             </div>
-          </li>
+          </li> */}
           <li className="nav-item sub-menu"><Link className="nav-link" to="/mg-way/">The MG Way</Link>
             <input type="checkbox" id="menu-3" />
             <div id="menu-cont-2">
@@ -237,7 +254,10 @@ const Header = () => {
               <div className="mobile-logo black-logo text-center"><img src="https://res.cloudinary.com/mbsaiyed/image/upload/v1625481695/svg/mobile-logo.svg" alt="" /></div>
               <ul className="menu-ul">
                 <label className="menu-label" htmlFor="menu-1">Menu</label>
-                <li className="nav-item"><Link to="/events/">Events</Link></li>
+                <li className="nav-item"><Link to="/insights/">Insights</Link></li>
+              <li className="nav-item"><Link to="/news/">News & articles</Link></li>
+              <li className="nav-item"><Link to="/events/">Events</Link></li>
+              <li className="nav-item"><Link to="#">Incubator Program</Link></li>
               </ul>
             </div>
           </li>
