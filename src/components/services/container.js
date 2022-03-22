@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import lottie from "lottie-web";
 import desktopSlider from "./secondslider.json";
 import mobileSlider from "./secondslider-mobile.json";
-import smoothscroll from 'smoothscroll-polyfill';
+import smoothscroll from './smoothscroll-polyfill';
 import { navigate } from 'gatsby';
 
 
