@@ -49,7 +49,7 @@ const PeopleList = (props) => {
                 <img className="img-fluid" style={{ width: "100%" }} src={d.img?.mediaItemUrl} alt={d.img?.altTxt} />
                 <h4 className="px-4">{d.title}</h4>
                 <h5 className="px-4 py-1">{d.subtitle}</h5>
-                <p className="py-1 px-4" style={{ minHeight: "70px" }}  dangerouslySetInnerHTML={{ __html: props.data.excerpt }}></p>
+                <p className="py-1 px-4" style={{ minHeight: "70px" }}  dangerouslySetInnerHTML={{ __html: d.text }}></p>
                 <div>
                   <a href={"mailto:" + d.email} className="pb-2 px-4 d-inline-block"><i className="fa fa-envelope" aria-hidden="true"></i></a>
                   <a href={d.linkedin} className="pb-2 d-inline-block"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
