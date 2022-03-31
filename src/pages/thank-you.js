@@ -26,16 +26,16 @@ const Thankyou = ({ data }) => {
       <Layout>
         <Seo title={data.wpPage?.metaFields?.metaTitle} description={data.wpPage?.metaFields?.metaDescription} />
         <TopBanner
-          title={data.wpPage.thankYou.bannerTitle}
-          subtitle={data.wpPage.thankYou.bannerSubtitle}
+          title={data.wpPage?.thankYou.bannerTitle}
+          subtitle={data.wpPage?.thankYou.bannerSubtitle}
           text={''}
-          bannerImg={data.wpPage.thankYou.bannerImage}
+          bannerImg={data.wpPage?.thankYou.bannerImage}
           breadCrumbs={breadCrumbs}
-          btnTxt={data.wpPage.thankYou.meetExpertLabel}
-          sendUrl={data.wpPage.thankYou.meetExpertUrl}
+          btnTxt={data.wpPage?.thankYou.meetExpertLabel}
+          sendUrl={data.wpPage?.thankYou.meetExpertUrl}
         />
         <TestimonialMain
-          data={data.wpPage.thankYou.testimonialThanks}
+          data={data.wpPage?.thankYou.testimonialThanks}
         />
         <Container
           title={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.testimonialTitle}
@@ -43,8 +43,8 @@ const Thankyou = ({ data }) => {
           slideColor={'#EBE9DE'}
         />
         <BackInBusiness
-          title={data.wpPage.thankYou.resourceTitle}
-          data={data.wpPage.thankYou.resources}
+          title={data.wpPage?.thankYou.resourceTitle}
+          data={data.wpPage?.thankYou.resources}
         />
         <Events
           title={'Events and webinars'}
@@ -53,11 +53,11 @@ const Thankyou = ({ data }) => {
           btn={true}
         />
         <FullText
-          text={data.wpPage.thankYou.title}
-          subTxt={data.wpPage.thankYou.subtitle}
+          text={data.wpPage?.thankYou.title}
+          subTxt={data.wpPage?.thankYou.subtitle}
           btn={true}
-          btnUrl={data.wpPage.thankYou.buttonUrl}
-          btnTxt={data.wpPage.thankYou.buttonLabel}
+          btnUrl={data.wpPage?.thankYou.buttonUrl}
+          btnTxt={data.wpPage?.thankYou.buttonLabel}
         />
         {/* <Container
           title={data.wpPage.hpOptions.testimonialTitle}
