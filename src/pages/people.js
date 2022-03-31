@@ -88,7 +88,7 @@ const MgWay = ({ data }) => {
   })
   let businessData = [];
   data.allWpOurpeople.nodes.map((d) => {
-    return businessData.push({ title: d.title, subtitle: d.backInBusiness.designation, text: d.backInBusiness.location, certification: d.backInBusiness.certification, content: d.content, linkedin: d.backInBusiness.linkedin, email: d.backInBusiness.email, img: d.featuredImage?.node });
+    return businessData.push({ title: d.title, subtitle: d.backInBusiness.designation, text: d.backInBusiness.location, certification: d.backInBusiness.certification, content: d.content, linkedin: d.backInBusiness.linkedin, email: d.backInBusiness.email, phone: d.backInBusiness.phoneNumber, img: d.featuredImage?.node });
   })
   const breadCrumbs = [
     { link: "/", title: "Home" },
@@ -220,6 +220,7 @@ export const query = graphql`
           certification
           linkedin
           email
+          phoneNumber
         }
         featuredImage {
           node {

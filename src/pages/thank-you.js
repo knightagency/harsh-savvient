@@ -24,7 +24,7 @@ const Thankyou = ({ data }) => {
   return (
     <div className="service insights thankyou">
       <Layout>
-        <Seo title={data.wpPage.metaFields?.metaTitle} description={data.wpPage.metaFields?.metaDescription} />
+        <Seo title={data.wpPage?.metaFields?.metaTitle} description={data.wpPage?.metaFields?.metaDescription} />
         <TopBanner
           title={data.wpPage.thankYou.bannerTitle}
           subtitle={data.wpPage.thankYou.bannerSubtitle}
