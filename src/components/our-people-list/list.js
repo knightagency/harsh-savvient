@@ -85,7 +85,7 @@ const PeopleList = (props) => {
                 <p className="py-1 px-4" style={{ minHeight: "70px" }}  dangerouslySetInnerHTML={{ __html: d.text }}></p>
                 <div>
                   <a href={"mailto:" + d.email} className="pb-2 px-4 d-inline-block"><i className="fa fa-envelope" aria-hidden="true"></i></a>
-                  <a href={"tel:" + d.phone} className="pb-2 px-4 d-inline-block"><i className="fa fa-phone" aria-hidden="true"></i></a>
+                  <a href={"tel:" + d.phone} className="pb-2 px-right d-inline-block"><i className="fa fa-phone" aria-hidden="true"></i></a>
                   <a href={d.linkedin} className="pb-2 d-inline-block"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
                 </div>
                 {d.content && d.content.length > 0 && <a className="ps-4 pe-4 px-4" href="#" onClick={(e) => { e.preventDefault(); setShowPopup(1); console.log(key); slide.current.slickGoTo(key); }}>Read More <i className="fa fa-chevron-right" aria-hidden="true"></i></a>}
@@ -103,7 +103,7 @@ const PeopleList = (props) => {
                 <p className="py-1 px-4" style={{ minHeight: "70px" }}  dangerouslySetInnerHTML={{ __html: d.text }}></p>
                 <div>
                   <a href={"mailto:" + d.email} className="pb-2 px-4 d-inline-block"><i className="fa fa-envelope" aria-hidden="true"></i></a>
-                  <a href={"tel:" + d.phone} className="pb-2 px-4 d-inline-block"><i className="fa fa-phone" aria-hidden="true"></i></a>
+                  <a href={"tel:" + d.phone} className="pb-2 px-right d-inline-block"><i className="fa fa-phone" aria-hidden="true"></i></a>
                   <a href={d.linkedin} className="pb-2 d-inline-block"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
                 </div>
                 {d.content && d.content.length > 0 && <a className="ps-4 pe-4 px-4" href="#" onClick={(e) => { e.preventDefault(); setShowPopup(1); console.log(key); slide.current.slickGoTo(3+key); }}>Read More <i className="fa fa-chevron-right" aria-hidden="true"></i></a>}
@@ -127,6 +127,7 @@ const PeopleList = (props) => {
                 <p className="py-1 px-4" style={{ minHeight: "70px" }}  dangerouslySetInnerHTML={{ __html: d.text }}></p>
                 <div>
                   <a href={"mailto:" + d.email} className="pb-2 px-4 d-inline-block"><i className="fa fa-envelope" aria-hidden="true"></i></a>
+                  <a href={"tel:" + d.phone} className="pb-2 px-right d-inline-block"><i className="fa fa-phone" aria-hidden="true"></i></a>
                   <a href={d.linkedin} className="pb-2 d-inline-block"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
                 </div>
                 <p className="px-4" dangerouslySetInnerHTML={{ __html: d.content }}></p>
@@ -162,7 +163,7 @@ const PeopleList = (props) => {
                         <div className="modalpara" dangerouslySetInnerHTML={{ __html: d.content }} />
                         <div>
                           <a href={"mailto:" + d.email} className="pb-2 px-4 d-inline-block"><i className="fa fa-envelope" aria-hidden="true"></i></a>
-                          <a href={"tel:" + d.phone} className="pb-2 px-4 d-inline-block"><i className="fa fa-phone" aria-hidden="true"></i></a>
+                          <a href={"tel:" + d.phone} className="pb-2 px-right d-inline-block"><i className="fa fa-phone" aria-hidden="true"></i></a>
                           <a href={d.linkedin} className="pb-2 d-inline-block"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                         <a onClick={(e) => { e.preventDefault(); setShowPopup(0); document.getElementById('get-in-touch').scrollIntoView() }} href="#get-in-touch">Get in touch <i className="fa fa-chevron-right" aria-hidden="true"></i></a>

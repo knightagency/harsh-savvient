@@ -94,7 +94,7 @@ const CapabilityForm = (props) => {
                         </label>
                       </div>
                       <input type="hidden" name="oid" value="00D2w000000ny8T" />
-                      <input type="hidden" name="retURL" value="https://mackey.herokuapp.com/thank-you/" />
+                      <input type="hidden" name="retURL" value="https://www.mackaygoodwin.com.au/thank-you/" />
                       <input id="lead_source" name="lead_source" type="hidden" value="Web Form" />
                       <input id="00N2w00000DXDbL" name="00N2w00000DXDbL" type="hidden" value="MG" />
                       <input id="00N2w00000DXDbM" name="00N2w00000DXDbM" type="hidden" value="Capability Statement 2021" />

@@ -3005,6 +3005,10 @@ img.recovery-partner-img {
     margin-top: 10px;
 }
 
+.px-right {
+    padding-right: 1.5rem!important;
+}
+
 /****** BreakPoints *******/
 /****** Responsive Start *******/
 @media screen and (max-width:1500px){

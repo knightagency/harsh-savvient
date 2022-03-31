@@ -306,7 +306,7 @@ export const query = graphql`
           certification
           designationType
           linkedin
-          email,
+          email
           phoneNumber
         }
         featuredImage {

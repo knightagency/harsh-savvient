@@ -60,7 +60,7 @@ const GetInTouchForm = () => {
       <input id="00N9D000002HWTG" name="00N9D000002HWTG" size="20" type="hidden" />
       <input id="company" maxLength="40" name="company" size="20" type="hidden" value='mackaygoodwin' />
       <input type="hidden" name="oid" value="00D9D0000008gaJ" />
-      <input type="hidden" name="retURL" value="https://mackey.herokuapp.com/thank-you/" />
+      <input type="hidden" name="retURL" value="https://www.mackaygoodwin.com.au/thank-you/" />
       <input type="text" name="first-name" placeholder="First Name" className="firstName" required onChange={(e) => { setfName(e.target.value); e.target.value.trim() !== "" ? setShowfName('d-none') : setShowfName('d-block') }} />
       <div className={"alert alert-danger " + showfName} style={fName.trim() !== "" ? { display: "none" } : {}} role="alert">Please enter first name.</div>
       <input type="text" name="surname" placeholder="Surname" className="surName" required onChange={(e) => { setlName(e.target.value); e.target.value.trim() !== "" ? setShowlName('d-none') : setShowlName('d-block') }} />
