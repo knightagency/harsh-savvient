@@ -84,7 +84,7 @@ const Header = () => {
               <li className="p-2"><Link className="dropdown-item" to="/insights/">Insights</Link></li>
               <li className="p-2"><Link className="dropdown-item" to="/news/">News & articles</Link></li>
               <li className="p-2"><Link className="dropdown-item" to="/events/">Events</Link></li>
-              <li className="p-2"><Link className="dropdown-item" to="#">Incubator Program</Link></li>
+              <li className="p-2"><Link className="dropdown-item" to="/mg-academy/#incubator-program">Incubator Program</Link></li>
             </ul>
           </li>
           <li className="nav-item p-3">
@@ -156,7 +156,7 @@ const Header = () => {
                 <li className="p-2"><Link className="dropdown-item" to="/insights/">Insights</Link></li>
               <li className="p-2"><Link className="dropdown-item" to="/news/">News & articles</Link></li>
               <li className="p-2"><Link className="dropdown-item" to="/events/">Events</Link></li>
-              <li className="p-2"><Link className="dropdown-item" to="#">Incubator Program</Link></li>
+              <li className="p-2"><Link className="dropdown-item" to="/mg-academy/#incubator-program">Incubator Program</Link></li>
               </ul>
             </li>
             <li className="nav-item p-3">
@@ -257,7 +257,7 @@ const Header = () => {
                 <li className="nav-item"><Link to="/insights/">Insights</Link></li>
               <li className="nav-item"><Link to="/news/">News & articles</Link></li>
               <li className="nav-item"><Link to="/events/">Events</Link></li>
-              <li className="nav-item"><Link to="#">Incubator Program</Link></li>
+              <li className="nav-item"><Link to="/mg-academy/#incubator-program">Incubator Program</Link></li>
               </ul>
             </div>
           </li>
