@@ -106,6 +106,7 @@ const Restructuring = ({ data }) => {
         title={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchTitle}
         text={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchDescription}
       />
+      {data.wpPage.restructuring.videoButtonLabel}asdfadsf
     </Layout>
   </div>
   )
@@ -125,6 +126,8 @@ export const query = graphql`
         businessDirectorAdvisorLink
         businessDirectorButtonLink
         businessTitle
+        videoButtonLabel
+        video
         croDesc
         officerimage {
           altText

@@ -8,7 +8,7 @@ import GetInTouch from "../components/get-in-touch"
 import Accordian from "../components/accordian/accordian"
 import FullText from "../components/full-text"
 import CurveLeft from "../components/curve-left"
-import CurveRight from "../components/curve-right"
+import CurveRight2 from "../components/curve-right2"
 import HealthForm from "../components/health-form"
 import EbookForm from "../components/ebook-form"
 import { formHealthContext, formEbookContext } from '../components/context';
@@ -28,6 +28,7 @@ import { formHealthContext, formEbookContext } from '../components/context';
 // ]
 
 const Insolvency = ({ data }) => {
+  const [showModal, setModal] = React.useState(false);
   let whyMG = [];
   data.wpPage.insolvency.qA.map((d) => {
     return whyMG.push({ title: d.question, description: d.answer, learnMoreText: d.buttonLabel, learnMoreUrl: d.buttonUrl });
@@ -70,10 +71,12 @@ const Insolvency = ({ data }) => {
         btn2Link={data.wpPage.insolvency.businessDirectorButtonLink}
       /> */}
       <formHealthContext.Provider value={value}>
-        <CurveRight
+        <CurveRight2
           title={data.wpPage.insolvency.healthCheckTitle}
           text={data.wpPage.insolvency.healthCheckDesc}
           img={data.wpPage.insolvency.healthCheckImage}
+          video={data.wpPage.insolvency.video}
+          videolabel={data.wpPage.insolvency.videoButtonLabel}
           btn1Txt={data.wpPage.insolvency.buttonBook}
           btn2Txt={null}
           btn1Link={data.wpPage.insolvency.buttonBookurl}
@@ -103,6 +106,7 @@ const Insolvency = ({ data }) => {
         title={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchTitle}
         text={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchDescription}
       />
+      {data.wpPage.insolvency.videoButtonLabel}asdfadsf
     </Layout>
   </div>
   )
@@ -122,6 +126,8 @@ export const query = graphql`
         businessDirectorButtonLink
         buttonBook
         buttonBookurl
+        videoButtonLabel
+        video
         healthCheckDesc
         healthCheckImage {
           altText
