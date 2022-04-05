@@ -14,6 +14,7 @@ const breadCrumbs = [
 
 const MgAcademyPage = ({ data }) => {
   const [showModal, setModal] = React.useState(false);
+  const [showModal2, setModal2] = React.useState(false);
   const [ytUrl, setYtUrl] = React.useState('');
   const setVideoUrl = (url) => {
     var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
@@ -49,9 +50,12 @@ const MgAcademyPage = ({ data }) => {
                  <h2 class="ins-banner-heading2">{data.wpPage.news.incubatorProgramTitle}</h2>
                  <div class="ins-banner-details2">
                     <div dangerouslySetInnerHTML={{__html: data.wpPage.news.incubatorProgramDescription }} />
-                    {data.wpPage.news.incubatorProgramFormCode}
+                    
+
                  </div>
-                 <Link className="btn btn-primary me-5" target="_blank" to="https://australiandebtsolvers.wufoo.com/forms/w1f3tm5u0u9na2v/">Enquire now</Link>
+
+                 <button type="button" onClick={()=>setModal2(true)} data-toggle="modal" data-target="#myModal2">Enquire now</button>
+                 
                   
               </div>
              </div>
@@ -63,6 +67,20 @@ const MgAcademyPage = ({ data }) => {
         text={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchDescription}
       />
     </Layout>
+    <div id="myModal2" role="dialog" className={showModal2?'in show modal fade':'modal fade'}>
+    <div class="model_inner">
+     <div class="popup_dialog">
+         <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" onClick={()=>setModal2(false)}>&times;</button>
+         <div className="popup_body">
+         <div className="form_pp">
+                 <div id="wufoo-w1f3tm5u0u9na2v"><iframe title="Embedded Wufoo Form" id="wufooFormw1f3tm5u0u9na2v" className="wufoo-form-container" height="1451" allowtransparency="true" frameborder="0" scrolling="no" src="https://australiandebtsolvers.wufoo.com/embed/w1f3tm5u0u9na2v/def/embedKey=w1f3tm5u0u9na2v868469&amp;entsource=wordpress&amp;referrer=http%3Awuslashwuslashlocalhostwuslashcitiportwuslashwp-adminwuslashpost.php%3Fpost%3D256%26action%3Dedit"><a href="https://australiandebtsolvers.wufoo.com/forms/w1f3tm5u0u9na2v/" title="html form">Fill out my Wufoo form!</a></iframe></div></div>
+         </div>
+         
+       </div>
+
+     </div></div>
+   </div>
     <div id="myModal" role="dialog" className={showModal?'in show modal fade':'modal fade'}>
       <div class="model_inner">
         <div class="popup_dialog">

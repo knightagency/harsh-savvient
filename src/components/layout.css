@@ -3021,6 +3021,26 @@ img.recovery-partner-img {
     width: auto;
 }
 
+.form_pp iframe {
+    height: 1600px;
+    overflow: scroll;
+    width: 100%;
+}
+
+#myModal2 .model_inner {
+    align-items: inherit;
+}
+#myModal2 .modal-content {
+    height: 90%;
+    margin: 5% 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 15px;
+}
+#myModal2 .popup_dialog button.close {
+    right: 0;
+    top: 0;
+}
 /****** BreakPoints *******/
 /****** Responsive Start *******/
 @media screen and (max-width:1500px){
@@ -3288,6 +3308,16 @@ img.recovery-partner-img {
         width: 100%;
     }
 }
+@media screen and (max-width:855px){
+    .form_pp iframe {
+        height: 1630px;
+    }
+}
+@media screen and (max-width:805px){
+    .form_pp iframe {
+        height: 1660px;
+    }
+}
 @media screen and (max-width:767px){
 
     #banner-section.identi_bannersec {
@@ -3345,6 +3375,11 @@ img.recovery-partner-img {
     right:0px;
     }
     .modal{    margin-top: -400%; }
+}
+@media screen and (max-width:720px){
+    .form_pp iframe {
+        height: 1690px;
+    }
 }
 
 /** Small Desktop **/
@@ -4268,4 +4303,34 @@ button.btn-close {
         right: 8px;
         top: 9px;
 }
+}
+@media screen and (max-width:665px){
+    .form_pp iframe {
+        height: 1800px;
+    }
+}
+@media screen and (max-width:600px){
+    .form_pp iframe {
+        height: 1830px;
+    }
+}
+@media screen and (max-width:567px){
+    .form_pp iframe {
+        height: 1860px;
+    }
+}
+@media screen and (max-width:500px){
+    .form_pp iframe {
+        height: 1920px;
+    }
+}
+@media screen and (max-width:450px){
+    .form_pp iframe {
+        height: 2120px;
+    }
+}
+@media screen and (max-width:400px){
+    .form_pp iframe {
+        height: 2360px;
+    }
 }
