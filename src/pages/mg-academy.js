@@ -49,6 +49,7 @@ const MgAcademyPage = ({ data }) => {
                  <h2 class="ins-banner-heading2">{data.wpPage.news.incubatorProgramTitle}</h2>
                  <div class="ins-banner-details2">
                     <div dangerouslySetInnerHTML={{__html: data.wpPage.news.incubatorProgramDescription }} />
+                    {data.wpPage.news.incubatorProgramFormCode}
                  </div>
                  <Link className="btn btn-primary me-5" target="_blank" to="https://australiandebtsolvers.wufoo.com/forms/w1f3tm5u0u9na2v/">Enquire now</Link>
                   
@@ -95,6 +96,7 @@ export const query = graphql`
           altText
         }
         incubatorProgramDescription
+        incubatorProgramFormCode
       }
       metaFields {
         metaDescription
