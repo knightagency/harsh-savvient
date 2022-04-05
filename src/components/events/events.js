@@ -46,11 +46,11 @@ const Events = (props) => {
       <div className="row">
         <h2> Upcoming Events </h2>
         {upcoming.map((d) => {
-          return <EventsList data={d} />
+          return <EventsList data={d} setVideoUrl={props.setVideoUrl} />
         })}
         <h2> Past Events </h2>
         {past.map((d) => {
-          return <EventsList data={d} />
+          return <EventsList data={d} setVideoUrl={props.setVideoUrl} />
         })}
       </div>
       {props.btn !== false ? <div className="pt-5">
