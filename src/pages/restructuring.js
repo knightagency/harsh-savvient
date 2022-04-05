@@ -9,7 +9,7 @@ import Accordian from "../components/accordian/accordian"
 import FullText from "../components/full-text"
 import Container from "../components/slider/container"
 import CurveLeft from "../components/curve-left"
-import CurveRight from "../components/curve-right"
+import CurveRight2 from "../components/curve-right2"
 import HealthForm from "../components/health-form"
 import EbookForm from "../components/ebook-form"
 import { formHealthContext, formEbookContext } from '../components/context';
@@ -72,11 +72,13 @@ const Restructuring = ({ data }) => {
         btnLink={data.wpPage.restructuring.enquireLink}
       />
       <formHealthContext.Provider value={value}>
-        <CurveRight
+        <CurveRight2
           id={'business-health-check'}
           title={data.wpPage.restructuring.healthCheckTitle}
           text={data.wpPage.restructuring.healthCheckDesc}
           img={data.wpPage.restructuring.healthCheckImage}
+          video={data.wpPage.restructuring.video}
+          videolabel={data.wpPage.restructuring.videoButtonLabel}
           btn1Txt={data.wpPage.restructuring.buttonLabel}
           btn2Txt={null}
           btn1Link={data.wpPage.restructuring.buttonUrl}

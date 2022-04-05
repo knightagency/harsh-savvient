@@ -106,7 +106,6 @@ const Insolvency = ({ data }) => {
         title={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchTitle}
         text={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchDescription}
       />
-      {data.wpPage.insolvency.videoButtonLabel}asdfadsf
     </Layout>
   </div>
   )
