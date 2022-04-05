@@ -3009,8 +3009,16 @@ img.recovery-partner-img {
     padding-right: 1.5rem!important;
 }
 
-.ins-content2 .btn {
+.ins-content222 button {
+    display: inline-block;
+    vertical-align: middle;
     margin-bottom: 0;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'Sohne', sans-serif, Arial;
+    line-height: 1.5;
+    padding: 10px 30px;
+    width: auto;
 }
 
 /****** BreakPoints *******/
