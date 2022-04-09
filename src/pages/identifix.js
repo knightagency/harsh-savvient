@@ -97,7 +97,7 @@ const Identifix = ({data}) => {
               <div class="ins-content2">
                  <h2 class="ins-banner-heading2">{data.wpPage.identifixPageOptions.title2}</h2>
                  <div class="ins-banner-details2"><div dangerouslySetInnerHTML={{__html: data.wpPage.identifixPageOptions.description2 }} /></div>
-                 <Link className="btn btn-primary me-5"  to="#get-in-touch">Learn More</Link>
+                 <Link className="btn btn-primary me-5"  to="/vcfo/">Learn More</Link>
                   
               </div>
            </div>
