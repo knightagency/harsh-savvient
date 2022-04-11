@@ -8,6 +8,17 @@ import GetInTouch from "../components/get-in-touch"
 
 const Vcfo = ({data}) => {
    const [showModal, setModal] = React.useState(false);
+   const [showModal2, setModal2] = React.useState(false);
+   const [formLink, setformLink] = React.useState('');
+   const [showForm, setShowForm] = React.useState(false);
+   const setModalForm = (fid) => {
+       setShowForm(false);
+       setModal2(fid);
+       setformLink(fid);
+       setTimeout(()=>{
+           setShowForm(true);
+       },2000);
+   }
    React.useEffect(() => {
      document.body.classList = 'identifixpage';
      return () => {
@@ -70,7 +81,27 @@ const Vcfo = ({data}) => {
                             <h3>{plan.price}</h3>
                             <p>{plan.perText}</p>
                             <div dangerouslySetInnerHTML={{__html: plan.content }} />
-                            <div className="gs_btn"><a href="{plan.buttonLink}">{plan.buttonText}</a></div>
+                            <div className="gs_btn">
+                             
+                            <a href="javascript:void(0);" onClick={()=>setModalForm(index)}>{plan.buttonText}</a> 
+                            </div>
+
+                            <div id={'myModal'+index} role="dialog" className={showModal2===index?'in show modal fade':'modal fade'}>
+                                <div class="model_inner getfrm_model">
+                                 <div class="popup_dialog">
+                                     <div class="modal-content">
+                                      <button type="button" class="close" data-dismiss="modal" onClick={()=>setModal2(false)}>&times;</button>
+                                     <div className="popup_body">
+                                     <div className="form_pp">
+                                        <div id={'wufoo-'+plan.buttonLink}><iframe title="Embedded Wufoo Form" id={'wufooForm-'+plan.buttonLink} className="wufoo-form-container" height="1451" allowtransparency="true" frameborder="0" scrolling="no" src={'https://australiandebtsolvers.wufoo.com/embed/'+plan.buttonLink+'/def/embedKey=w1f3tm5u0u9na2v868469&amp;entsource=wordpress&amp;referrer=http%3Awuslashwuslashlocalhostwuslashcitiportwuslashwp-adminwuslashpost.php%3Fpost%3D256%26action%3Dedit'}><a href={'https://australiandebtsolvers.wufoo.com/forms/'+plan.buttonLink} title="html form">Fill out my Wufoo form!</a></iframe></div>
+                                     </div>
+                                     
+                                   </div>
+
+                                 </div></div>
+                               </div>
+                               </div>
+                            
                         </div>
                     </div>
                     })}
@@ -102,6 +133,8 @@ const Vcfo = ({data}) => {
 
      </div></div>
    </div>
+
+   
 </Layout>)
 }
 export const query = graphql`

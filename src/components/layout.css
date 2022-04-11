@@ -3124,6 +3124,30 @@ img.recovery-partner-img {
     display: inline-block;
 }
 
+.getfrm_model iframe {
+    width: 100%;
+}
+.getfrm_model .form_pp { 
+    overflow-y: auto;
+    height: 100%;
+}
+.getfrm_model .popup_body {
+    height: 850px;
+    background: #ebe9de;
+    padding: 25px;
+}
+.getfrm_model .form_pp>div {
+    position: relative;
+    padding-top: 100%;
+}
+.getfrm_model iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 /****** BreakPoints *******/
 /****** Responsive Start *******/
 @media screen and (min-width:1400px){
@@ -3146,6 +3170,9 @@ img.recovery-partner-img {
     }
     .packages_section {
         padding-bottom: 20px;
+    }
+    .getfrm_model .popup_body {
+        height: 670px;
     }
 }
 @media screen and (max-width:1500px){
@@ -3188,6 +3215,9 @@ img.recovery-partner-img {
     }
     .slider_height {
         height: 2690px;
+    }
+    .getfrm_model .popup_body {
+        height: 530px;
     }
 
 }
@@ -3482,6 +3512,9 @@ img.recovery-partner-img {
         margin-top: 0 !important;
         margin-bottom: 0 !important;
     }
+    .getfrm_model .form_pp>div {
+        padding-top: 140%;
+    }
 }
 @media screen and (max-width:767px){
 
@@ -3547,6 +3580,15 @@ img.recovery-partner-img {
     }
     .up_events .top-bor {
         padding-top: 20px !important;
+    }
+    .getfrm_model .popup_body {
+        height: 700px;
+    }
+    .getfrm_model .form_pp>div {
+    padding-top: 988px;
+    }
+    .getfrm_model .popup_body{
+            padding: 0;
     }
 }
 @media screen and (max-width:568px){
