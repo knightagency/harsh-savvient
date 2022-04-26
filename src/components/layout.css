@@ -2970,7 +2970,7 @@ img.recovery-partner-img {
     position: relative;
     padding-top: 53%;
 }
-.video_ratio iframe {
+.video_ratio iframe,.video_ratio video {
     width: 100%;
     height: 100%;
     position: absolute;

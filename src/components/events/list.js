@@ -25,7 +25,7 @@ const EventsList = (props) => {
           {props.data.eventsOption?.eventStatus != 'enablevideoaccess' ?
             <a className="bt-big px-4 mx-4" href={props.data.eventsOption?.registerUrl}>{props.data.eventsOption?.buttonLabel} <i className="fa fa-chevron-right" aria-hidden="true"></i></a>
             :
-            <a className="bt-big px-4 mx-4" href="javascript:void(0)" onClick={()=>props.setVideoUrl(props.data.eventsOption?.recordingUrl?.url)}>{props.data.eventsOption?.buttonLabel} <i className="fa fa-chevron-right" aria-hidden="true"></i></a>
+            <a className="bt-big px-4 mx-4" href="#" onClick={()=>props.setVideoUrl(props.data.eventsOption?.recordingUrl?.url?props.data.eventsOption?.recordingUrl?.url:props.data.eventsOption.video?.mediaItemUrl,props.data.eventsOption?.recordingUrl?.url?0:1)}>{props.data.eventsOption?.buttonLabel} <i className="fa fa-chevron-right" aria-hidden="true"></i></a>
             // <Link className="bt-big px-4 mx-4" to={props.data.eventsOption?.recordingUrl?.url}>{props.data.eventsOption?.buttonLabel} <i className="fa fa-chevron-right" aria-hidden="true"></i></Link>
           }
           <Link className="ps-4 pe-4 px-4" to={"/insights/" + props.data.slug + "/"}>Read More <i className="fa fa-chevron-right" aria-hidden="true"></i></Link>

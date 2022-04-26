@@ -16,10 +16,16 @@ const breadCrumbs = [
 const EventsPage = ({ data }) => {
   const [showModal, setModal] = React.useState(false);
   const [ytUrl, setYtUrl] = React.useState('');
-  const setVideoUrl = (url) => {
+  const [vdUrl, setVdUrl] = React.useState('');
+  const setVideoUrl = (url,tp) => {
     var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
     var match = url.match(regExp);
-    setYtUrl((match&&match[7].length==11)? match[7] : false);
+    if(tp){
+      setVdUrl(url);
+    }
+    else{
+      setYtUrl((match&&match[7].length==11)? match[7] : false);
+    }
     setModal(true);
   }
   return (<div className="service insights">
@@ -45,14 +51,15 @@ const EventsPage = ({ data }) => {
       />
     </Layout>
     <div id="myModal" role="dialog" className={showModal?'in show modal fade':'modal fade'}>
-      <div class="model_inner">
-        <div class="popup_dialog">
-          <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" onClick={()=>setModal(false)}>&times;</button>
-            <div class="popup_body">
-              <div class="video_ratio">
-              <iframe class="embed-responsive-item" src={'https://www.youtube.com/embed/'+ytUrl+'?autoplay=1&amp;amp;modestbranding=1&amp;amp;showinfo=0'} id="video" allowscriptaccess="always"></iframe>
+      <div className="model_inner">
+        <div className="popup_dialog">
+          <div className="modal-content">
+            <button type="button" className="close" data-dismiss="modal" onClick={()=>setModal(false)}>&times;</button>
+            <div className="popup_body">
+              <div className="video_ratio">
+              {vdUrl?<video width="100%" controls><source src={vdUrl} type="video/mp4" />Your browser does not support the video tag.</video>:<iframe className="embed-responsive-item" src={'https://www.youtube.com/embed/'+ytUrl+'?autoplay=1&amp;amp;modestbranding=1&amp;amp;showinfo=0'} id="video" allowscriptaccess="always"></iframe>}
               </div>
+              
             </div>
           </div>
         </div>
@@ -111,6 +118,9 @@ export const query = graphql`
           eventStatus
         	recordingUrl {
             url
+          },
+          video {
+            mediaItemUrl
           }
         }
       }
