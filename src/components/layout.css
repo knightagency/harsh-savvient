@@ -2355,11 +2355,11 @@ section.banners.curve-right {
     background: #E0E3E5
 }
 
-.mgway .banner-image::before {
+.mgway .banner-image::before, .dpn_bannersec .banner-image::before {
     background: #E0E3E5
 }
 
-.mgway .banner-image::after {
+.mgway .banner-image::after, .dpn_bannersec .banner-image::after {
     background: #F1F0E8
 }
 
@@ -3148,6 +3148,86 @@ img.recovery-partner-img {
     left: 0;
 }
 
+.dpn_bannersec .row {
+    position: relative;
+}
+.dpn_bannersec .banner-image {
+    position: inherit !important;
+}
+.dpn_bannersec .banner-image:before {
+    right: 14rem;
+    height: 100%;
+    bottom: 14%;
+}
+.dpn_bannersec .banner-image:after {
+    left: 33.33%;
+}
+#banner-section.dpn_bannersec {
+    padding-top: 105px;
+}
+.dpn_bannersec .bnr_form {
+    padding-top: 58px;
+    padding-left: 91px;
+}
+.dpn_bannersec .bnr_form ul {
+    padding: 0;
+    margin: 0;
+}
+.dpn_bannersec .bnr_form ul:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.dpn_bannersec .bnr_form ul li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    float: left;
+}
+.dpn_bannersec .bnr_form ul li:first-child, .dpn_bannersec .bnr_form ul li:nth-child(5) {
+    width: 48%;
+}
+.dpn_bannersec .bnr_form ul li:nth-child(2), .dpn_bannersec .bnr_form ul li:nth-child(6) {
+    width: 48%;
+    float: right;
+}
+.dpn_bannersec .bnr_form ul li textarea {
+    height: 100px;
+}
+.dpn_bannersec .banner-content {
+    margin: 0;
+    padding-top: 148px;
+}
+.wdpn_section {
+    padding-top: 142px;
+    padding-bottom: 111px;
+}
+.wdpn_section .row {
+    display: flex;
+    align-items: center;
+}
+.wdpn_section .container {
+    max-width: 1136px;
+}
+
+.dpn_page .accordion-button {
+    font-size: 55px;
+    color: #dbfd90;
+    position: relative;
+    padding-left: 129px;
+}
+.dpn_page .accordion-button:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.dpn_page .accordion-body p, .dpn_page .accordion-body div {
+    max-width: inherit;
+}
+.wdpn_section {
+    margin-top: 119px;
+}
 /****** BreakPoints *******/
 /****** Responsive Start *******/
 @media screen and (min-width:1400px){
