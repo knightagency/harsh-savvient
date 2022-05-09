@@ -6,6 +6,8 @@ import Seo from "../components/seo"
 import GetInTouchForm from "../components/banner-get-in-touch-form";
 import Accordian from "../components/accordian/accordian"
 import TestimonialMain from "../components/testimonial-main"
+import Options from "../components/options/container"
+import useInView from "react-cool-inview";
 
 const DirectorPenaltyNotice = ({data}) => {
    const [showModal, setModal] = React.useState(false);
@@ -15,6 +17,19 @@ const DirectorPenaltyNotice = ({data}) => {
        document.body.classList = '';
      }
    }, [])
+  const [serviceEnter, changeServiceEnter] = React.useState('')
+  const { observe, unobserve, inView, scrollDirection, entry } = useInView({
+    threshold: 0.25, // Default is 0
+    onEnter: ({ scrollDirection, entry, observe, unobserve }) => {
+      changeServiceEnter('serviceIn')
+      // Triggered when the target enters the viewport
+    },
+    onLeave: ({ scrollDirection, entry, observe, unobserve }) => {
+      changeServiceEnter('')
+      // Triggered when the target leaves the viewport
+    },
+    // More useful options...
+  });
   return (<Layout>
     <Seo title="DirectorPenaltyNotice" />
     <div class="dpn_page">
@@ -71,6 +86,9 @@ const DirectorPenaltyNotice = ({data}) => {
             textHoverColor={"#DBFD90"}
           />
 
+
+      
+
       <TestimonialMain
         data={data.wpPage.directorpenaltynoticePageOptions.testimonial}
       />
@@ -86,7 +104,7 @@ const DirectorPenaltyNotice = ({data}) => {
             {data.wpPage.directorpenaltynoticePageOptions.partner.map((d) => {
               return (<div className={"col-xs-12 col-md-6 col-lg-" + parseInt(12 / data.wpPage.directorpenaltynoticePageOptions.partner.length)}>
                 <div className="text-center">
-                  <img src={d.image.mediaItemUrl} alt={d.image.altText} className="recovery-partner-img" />
+                  <img src={d.image?.mediaItemUrl} alt={d.image?.altText} className="recovery-partner-img" />
                 </div>
                 <p className="recovery-partner-title text-center"> {d.title} </p>
               </div>)
@@ -111,6 +129,7 @@ export const query = graphql`
           mediaItemUrl
           altText
         }
+        optionsTitle
         title
         title1
         banner1{
