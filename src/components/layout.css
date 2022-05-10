@@ -3232,6 +3232,36 @@ img.recovery-partner-img {
     padding-right: 140px;
     padding-top: 38px;
 }
+.dpn_rp_sec img.recovery-partner-img {
+    width: auto;
+    height: auto;
+    object-fit: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.dpn_rp_sec .rp_img {
+    height: 96px;
+    position: relative;
+    margin-bottom: 37px;
+}
+.dpn_rp_sec .whyTitle {
+    font-size: 44px;
+    margin-bottom: 27px;
+}
+.ol_list {
+    padding-top: 76px;
+}
+.ol_list h2 {
+    color: #000000;
+    font-family: 'reckless_neue_trialregular';
+    font-size: 44px;
+    font-weight: 500;
+    margin: 0;
+}
 /****** BreakPoints *******/
 /****** Responsive Start *******/
 @media screen and (min-width:1400px){

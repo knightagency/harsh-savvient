@@ -8,8 +8,14 @@ import Accordian from "../components/accordian/accordian"
 import TestimonialMain from "../components/testimonial-main2"
 import Options from "../components/options/container"
 import useInView from "react-cool-inview";
+import OurPeople from "../components/our-people-list/our-people2"
+import Services from "../components/services/container2"
 
 const DirectorPenaltyNotice = ({data}) => {
+  let businessData = [];
+  data.allWpOurpeople.nodes.map((d) => {
+    return businessData.push({ title: d.title, subtitle: d.backInBusiness.designation, text: d.backInBusiness.location, certification: d.backInBusiness.certification, content: d.content, linkedin: d.backInBusiness.linkedin, email: d.backInBusiness.email, phone: d.backInBusiness.phoneNumber, img: d.featuredImage?.node, designationType: d.backInBusiness.designationType });
+  })
    const [showModal, setModal] = React.useState(false);
    React.useEffect(() => {
      document.body.classList = 'DirectorPenaltyNoticepage';
@@ -86,14 +92,19 @@ const DirectorPenaltyNotice = ({data}) => {
             textHoverColor={"#DBFD90"}
           />
 
-
+      <div ref={observe} className={serviceEnter}>
+          <Services
+            serviceTitle={data.wpPage.directorpenaltynoticePageOptions.optionsTitle}
+            data={data.wpPage.directorpenaltynoticePageOptions.optionsTitle}
+          />
+        </div>
       
 
       <TestimonialMain
         data={data.wpPage.directorpenaltynoticePageOptions.testimonialTest}
       />
 
-      <section className="recovery-partner">
+      <section className="recovery-partner dpn_rp_sec">
         <div className="container">
           <div className="row">
             <div className="col">
@@ -103,7 +114,7 @@ const DirectorPenaltyNotice = ({data}) => {
           <div className="row justify-content-center">
             {data.wpPage.directorpenaltynoticePageOptions.partnerNew.map((d) => {
               return (<div className={"col-xs-12 col-md-6 col-lg-" + parseInt(12 / data.wpPage.directorpenaltynoticePageOptions.partnerNew.length)}>
-                <div className="text-center">
+                <div className="text-center rp_img">
                   <img src={d.imageNew?.mediaItemUrl} alt={d.imageNew?.altText} className="recovery-partner-img" />
                 </div>
                 <p className="recovery-partner-title text-center"> {d.titleNew} </p>
@@ -112,6 +123,16 @@ const DirectorPenaltyNotice = ({data}) => {
           </div>
         </div>
       </section>
+
+      <div class="mgway">
+
+      <OurPeople
+        title='Our liquidators'
+        text=''
+        data={businessData}
+        showAll={1}
+      />
+      </div>
       
     </div>
 </Layout>)
@@ -158,6 +179,27 @@ export const query = graphql`
           }
           titleNew
         }
+      }
+    }
+    allWpOurpeople(sort: {order:  ASC, fields: menuOrder}) {
+      nodes {
+        title
+        backInBusiness {
+          designation
+          location
+          certification
+          designationType
+          linkedin
+          email
+          phoneNumber
+        }
+        featuredImage {
+          node {
+            altText
+            mediaItemUrl
+          }
+        }
+        content
       }
     }
     allWp {
