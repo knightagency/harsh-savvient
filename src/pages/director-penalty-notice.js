@@ -90,7 +90,7 @@ const DirectorPenaltyNotice = ({data}) => {
       
 
       <TestimonialMain
-        data={data.wpPage.directorpenaltynoticePageOptions.testimonial}
+        data={data.wpPage.directorpenaltynoticePageOptions.newTestimonial}
       />
 
       <section className="recovery-partner">
@@ -143,9 +143,9 @@ export const query = graphql`
           fieldGroupName
           title
         }
-        testimonial {
-          description
-          image {
+        testimonialTest {
+          testDescription
+          testImage {
             altText
             mediaItemUrl
           }
