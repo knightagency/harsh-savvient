@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import GetInTouchForm from "../components/banner-get-in-touch-form";
 import Accordian from "../components/accordian/accordian"
-import TestimonialMain from "../components/testimonial-main"
+import TestimonialMain from "../components/testimonial-main2"
 import Options from "../components/options/container"
 import useInView from "react-cool-inview";
 
@@ -90,23 +90,23 @@ const DirectorPenaltyNotice = ({data}) => {
       
 
       <TestimonialMain
-        data={data.wpPage.directorpenaltynoticePageOptions.newTestimonial}
+        data={data.wpPage.directorpenaltynoticePageOptions.testimonialTest}
       />
 
       <section className="recovery-partner">
         <div className="container">
           <div className="row">
             <div className="col">
-              <h1 className="whyTitle text-center">{data.wpPage.directorpenaltynoticePageOptions.recoveryTagline}</h1>
+              <h1 className="whyTitle text-center">{data.wpPage.directorpenaltynoticePageOptions.recoveryTaglineNew}</h1>
             </div>
           </div>
           <div className="row justify-content-center">
-            {data.wpPage.directorpenaltynoticePageOptions.partner.map((d) => {
-              return (<div className={"col-xs-12 col-md-6 col-lg-" + parseInt(12 / data.wpPage.directorpenaltynoticePageOptions.partner.length)}>
+            {data.wpPage.directorpenaltynoticePageOptions.partnerNew.map((d) => {
+              return (<div className={"col-xs-12 col-md-6 col-lg-" + parseInt(12 / data.wpPage.directorpenaltynoticePageOptions.partnerNew.length)}>
                 <div className="text-center">
-                  <img src={d.image?.mediaItemUrl} alt={d.image?.altText} className="recovery-partner-img" />
+                  <img src={d.imageNew?.mediaItemUrl} alt={d.imageNew?.altText} className="recovery-partner-img" />
                 </div>
-                <p className="recovery-partner-title text-center"> {d.title} </p>
+                <p className="recovery-partner-title text-center"> {d.titleNew} </p>
               </div>)
             })}
           </div>
@@ -150,13 +150,13 @@ export const query = graphql`
             mediaItemUrl
           }
         }
-        recoveryTagline
-        partner {
-          image {
+        recoveryTaglineNew
+        partnerNew {
+          imageNew {
             altText
             mediaItemUrl
           }
-          title
+          titleNew
         }
       }
     }
