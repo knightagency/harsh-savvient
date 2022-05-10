@@ -3228,6 +3228,10 @@ img.recovery-partner-img {
 .wdpn_section {
     margin-top: 119px;
 }
+.dpn_bannersection .banner-content {
+    padding-right: 140px;
+    padding-top: 38px;
+}
 /****** BreakPoints *******/
 /****** Responsive Start *******/
 @media screen and (min-width:1400px){

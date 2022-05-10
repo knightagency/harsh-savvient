@@ -33,10 +33,10 @@ const DirectorPenaltyNotice = ({data}) => {
   return (<Layout>
     <Seo title="DirectorPenaltyNotice" />
     <div class="dpn_page">
-      <section id="banner-section" class="identi_bannersec">
+      <section id="banner-section" class="identi_bannersec dpn_bannersection">
      <div class="container position-relative">
      <div class="row">
-       <div class="col-sm-12 col-md-12 col-lg-5 col-xl-4">
+       <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5">
           <div class="banner-content innerpage-banner">
              <h1 class="banner-heading">{data.wpPage.directorpenaltynoticePageOptions.title}</h1>
               
@@ -46,7 +46,7 @@ const DirectorPenaltyNotice = ({data}) => {
              </div>
           </div>
        </div>
-       <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7">
+       <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5">
           <div class="banner-image">
              <img src={data.wpPage.directorpenaltynoticePageOptions.banner.mediaItemUrl} alt="data.wpPage.directorpenaltynoticePageOptions.banner.altText" />
           </div>
