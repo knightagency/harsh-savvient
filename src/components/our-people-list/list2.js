@@ -44,7 +44,7 @@ const PeopleList = (props) => {
       <div className="container">
         <div className="row people-list">
           {props.data.map((d, key) => {
-            return showAll == 0 && key > 5 ? "" : 
+            return !d.registeredLiquidators? "" : 
             <div className="col-lg-4 col-md-12  mt-4" key={key}>
               <div className="listbg">
                 <img className="img-fluid" style={{ width: "100%" }} src={d.img?.mediaItemUrl} alt={d.img?.altTxt} />

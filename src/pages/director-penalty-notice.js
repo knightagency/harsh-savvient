@@ -4,17 +4,18 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import GetInTouchForm from "../components/banner-get-in-touch-form";
-import Accordian from "../components/accordian/accordian"
+import Accordian from "../components/accordian/accordian2"
 import TestimonialMain from "../components/testimonial-main2"
 import Options from "../components/options/container"
 import useInView from "react-cool-inview";
 import OurPeople from "../components/our-people-list/our-people2"
 import Services from "../components/services/container2"
+import GetInTouch from "../components/get-in-touch"
 
 const DirectorPenaltyNotice = ({data}) => {
   let businessData = [];
   data.allWpOurpeople.nodes.map((d) => {
-    return businessData.push({ title: d.title, subtitle: d.backInBusiness.designation, text: d.backInBusiness.location, certification: d.backInBusiness.certification, content: d.content, linkedin: d.backInBusiness.linkedin, email: d.backInBusiness.email, phone: d.backInBusiness.phoneNumber, img: d.featuredImage?.node, designationType: d.backInBusiness.designationType });
+    return businessData.push({ title: d.title, subtitle: d.backInBusiness.designation, text: d.backInBusiness.location, certification: d.backInBusiness.certification, content: d.content, linkedin: d.backInBusiness.linkedin, email: d.backInBusiness.email, phone: d.backInBusiness.phoneNumber, img: d.featuredImage?.node, designationType: d.backInBusiness.designationType, registeredLiquidators: d.backInBusiness.registeredLiquidators });
   })
    const [showModal, setModal] = React.useState(false);
    React.useEffect(() => {
@@ -93,9 +94,7 @@ const DirectorPenaltyNotice = ({data}) => {
           />
 
       <div ref={observe} className={serviceEnter}>
-          <Services
-            serviceTitle={data.wpPage.directorpenaltynoticePageOptions.optionsTitle}
-            data={data.wpPage.directorpenaltynoticePageOptions.optionsTitle}
+          <Services optionsTitle={data.wpPage.directorpenaltynoticePageOptions.optionsTitle} optionsSubtext={data.wpPage.directorpenaltynoticePageOptions.optionsSubtext}
           />
         </div>
       
@@ -134,6 +133,10 @@ const DirectorPenaltyNotice = ({data}) => {
       />
       </div>
       
+      <GetInTouch
+          title={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchTitle}
+          text={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchDescription}
+        />
     </div>
 </Layout>)
 }
@@ -151,6 +154,7 @@ export const query = graphql`
           altText
         }
         optionsTitle
+        optionsSubtext
         title
         title1
         banner1{
@@ -192,6 +196,7 @@ export const query = graphql`
           linkedin
           email
           phoneNumber
+          registeredLiquidators
         }
         featuredImage {
           node {

@@ -8,8 +8,9 @@ import { navigate } from 'gatsby';
 
 const Container = (props) => {
   smoothscroll.polyfill();
-  const isBrowser = typeof window !== "undefined"
+  const isBrowser = typeof window !== "undefined";
   const [sheight,setHeight] = React.useState(isBrowser?window.scrollY:0);
+  const [isMobile,setIsMobile] = React.useState(isBrowser?window.scrollY:0);
   React.useEffect(() => {
     var animDuration = 10000;
     const anim = lottie.loadAnimation({
@@ -22,13 +23,50 @@ const Container = (props) => {
     lottie.setSpeed(0);
 
     function animatebodymovin(duration) {
-      const scrollPosition = window.scrollY;
-      const maxFrames = anim.totalFrames;
-      setHeight(scrollPosition);
-      const frame = (maxFrames / 1) * (scrollPosition / (duration / 1));
-      if(frame<190){
-        anim.goToAndStop(frame, true);
+      if (window.outerWidth < 992) {
+        setIsMobile(true);
+        if(window.scrollY>1900){
+          var div = document.getElementsByClassName('accordion-collapse');
+          var div2 = document.getElementsByClassName('accordion-button');
+          for (let i = 0; i < div.length; i++) {
+            div[i].classList.remove('show');
+          }
+          for (let i = 0; i < div2.length; i++) {
+            div2[i].classList.add('collapsed');
+          }
+
+          const scrollPosition = window.scrollY-1900;
+          const maxFrames = anim.totalFrames;
+          setHeight(scrollPosition);
+          const frame = (maxFrames / 1) * (scrollPosition / (duration / 1));
+
+          if(frame<225){
+            anim.goToAndStop(frame, true);
+          }
+        }
+      } else {
+        setIsMobile(false);
+        if(window.scrollY>2200){
+          var div = document.getElementsByClassName('accordion-collapse');
+          var div2 = document.getElementsByClassName('accordion-button');
+          for (let i = 0; i < div.length; i++) {
+            div[i].classList.remove('show');
+          }
+          for (let i = 0; i < div2.length; i++) {
+            div2[i].classList.add('collapsed');
+          }
+
+          const scrollPosition = window.scrollY-2200;
+          const maxFrames = anim.totalFrames;
+          setHeight(scrollPosition);
+          const frame = (maxFrames / 1) * (scrollPosition / (duration / 1));
+
+          if(frame<231){
+            anim.goToAndStop(frame, true);
+          }
+        }
       }
+      
     }
     const onScroll = () => {
       animatebodymovin(animDuration);
@@ -36,13 +74,16 @@ const Container = (props) => {
 
     const onBtnClick = (e) => {
       if(e.target.id=='slide0'){
-        window.scrollTo({top: 1200, left: 0, behavior: 'smooth' });
+        window.scrollTo({top: 900+2200, left: 0, behavior: 'smooth' });
       }
       if(e.target.id=='slide1'){
-        window.scrollTo({top: 2195, left: 0, behavior: 'smooth' });
+        window.scrollTo({top: 1700+2200, left: 0, behavior: 'smooth' });
       }
       if(e.target.id=='slide2'){
-        window.scrollTo({top: 2900, left: 0, behavior: 'smooth' });
+        window.scrollTo({top: 2800+2200, left: 0, behavior: 'smooth' });
+      }
+      if(e.target.id=='slide3'){
+        window.scrollTo({top: 3700+2200, left: 0, behavior: 'smooth' });
       }
       if(e.target){
         if (e.target.href) {
@@ -69,28 +110,32 @@ const Container = (props) => {
       document.removeEventListener("scroll", onScroll);
     };
   }, []);
+
+  
+
   return <section id="services">
     
-    <div className="container slider_height"><div className="slider_inner">
+    <div className="container slider_height dpn_slider"><div className="slider_inner">
       <div className="row">
         <div className="col">
-          <h2>{props.serviceTitle}</h2>
+          <h2>{props.optionsTitle}</h2>
+          <div dangerouslySetInnerHTML={{__html: props.optionsSubtext }} />
         </div>
       </div>
-      <div className="slider_fix" style={sheight>767 && sheight<2901?{ position: "fixed",left: "0", right:"0", top: "100px"}:{ position: "relative", top: sheight<=767?"0px":"1980px"}}>
+      <div className="slider_fix" style={sheight>300 && sheight<3800?{ position: "fixed",left: "0", right:"0", top: "100px"}:{ position: "relative", top: sheight<=400?"0px":"3400px"}}>
         <div className="justify-content-center serviceBtn-container">
           <ul className="service-option-container service_menu" id="service-option-container">
             <li className="service-option">
               <button className={sheight<=1200?"btn sliderBtn active":"btn sliderBtn"} id={"slide0"}>Liquidation</button>
             </li>
             <li className="service-option">
-              <button className={sheight<=2195 && sheight>1200?"btn sliderBtn active":"btn sliderBtn"} id={"slide1"}>Restructure & turnaround</button>
+              <button className={sheight<=2400 && sheight>1200?"btn sliderBtn active":"btn sliderBtn"} id={"slide1"}>Restructure & turnaround</button>
             </li>
             <li className="service-option">
-              <button className={sheight<=2195 && sheight>1200?"btn sliderBtn active":"btn sliderBtn"} id={"slide2"}>Administration</button>
+              <button className={sheight<=3300 && sheight>2400?"btn sliderBtn active":"btn sliderBtn"} id={"slide2"}>Administration</button>
             </li>
             <li className="service-option">
-              <button className={sheight>2195?"btn sliderBtn active":"btn sliderBtn"} id={"slide3"}>DOCA</button>
+              <button className={sheight>3300?"btn sliderBtn active":"btn sliderBtn"} id={"slide3"}>DOCA</button>
             </li>
           </ul>  
         </div>

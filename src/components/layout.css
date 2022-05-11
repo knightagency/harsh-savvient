@@ -3003,6 +3003,7 @@ img.recovery-partner-img {
 }
  
 .slider_height{ height: 2900px; }
+.slider_height.dpn_slider{ height: 4400px; }
 .identifixpage .fnav {
     display: none;
 }
@@ -3262,6 +3263,20 @@ img.recovery-partner-img {
     font-weight: 500;
     margin: 0;
 }
+.dpn_slider {
+    padding-top: 49px;
+}
+.dpn_slider h2 {
+    color: #2d2d2d;
+    font-size: 28px;
+    margin: 0 0 11px;
+}
+.dpn_slider p {
+    color: #000000;
+    font-size: 18px;
+    margin: 0;
+    line-height: 1.2;
+}
 /****** BreakPoints *******/
 /****** Responsive Start *******/
 @media screen and (min-width:1400px){
@@ -3333,7 +3348,12 @@ img.recovery-partner-img {
     .getfrm_model .popup_body {
         height: 530px;
     }
-
+    .wdpn_section {
+        margin-top: 60px;
+    }
+    .slider_height.dpn_slider {
+        height: 4250px;
+    }
 }
 @media screen and (max-width:1300px){
     .ps_bot .pack_inner h3 {
@@ -3456,6 +3476,21 @@ img.recovery-partner-img {
     .up_events .my-5 {
         margin-top: 0 !important;
         margin-bottom: 0 !important;
+    }
+    .dpn_page .accordion-button {
+        font-size: 45px;
+    }
+    .accordion-button:after {
+        width: 56px;
+        height: 56px;
+        top: 14px !important;
+    }
+    .dpn_page .accordion-button {
+        padding-left: 80px;
+    }
+    .dpn_rp_sec .recovery-partner-title {
+        font-size: 20px;
+        line-height: 1.3;
     }
 }
 
@@ -3607,6 +3642,7 @@ img.recovery-partner-img {
         position: fixed;
         left: 0;
         width: 100%;
+        z-index: 9;
     }
     .packages_section .ps_top {
         padding-top: 25px;
@@ -3628,6 +3664,38 @@ img.recovery-partner-img {
     }
     .getfrm_model .form_pp>div {
         padding-top: 140%;
+    }
+    .dpn_bannersection .banner-content {
+        padding-top: 0;
+    }
+    .wdpn_section {
+        margin-top: 50px !important;
+        margin-bottom: 50px !important;
+    }
+    .dpn_slider .btn {
+        padding: 9px 25px;
+    }
+    .dpn_page .accordion-button {
+        font-size: 40px;
+        padding-left: 50px;
+    }
+    .dpn_page .accordion-button:after {
+        top: 10px;
+    }
+    .dpn_slider {
+        padding-top: 0;
+    }
+    .slider_height.dpn_slider {
+        height: 4030px;
+    }
+    .testimonial-main.why-mg-fixed{
+        background-color: white;
+    }
+    .dpn_rp_sec .recovery-partner-title {
+        font-size: 20px;
+    }
+    .dpn_rp_sec .whyTitle {
+        font-size: 36px;
     }
 }
 @media screen and (max-width:767px){
@@ -3704,6 +3772,34 @@ img.recovery-partner-img {
     .getfrm_model .popup_body{
             padding: 0;
     }
+    .dpn_page .accordion-button {
+        font-size: 32px !important;
+    }
+    .dpn_page #why-mg h2 {
+        margin-bottom: 10px;
+    }
+    .dpn_page #services .slider_fix {
+        max-width: 516px;
+        margin: auto;
+    }
+    .slider_height.dpn_slider {
+        height: 4250px;
+    }
+}
+@media screen and (max-width:667px){
+    .ol_list h2 {
+        font-size: 34px;
+    }
+    .ol_list {
+        padding-top: 40px;
+    }
+    .dpn_page .recovery-partner {
+        padding-bottom: 30px;
+    }
+    .dpn_page ul.service-option-container {
+        width: 100%;
+        text-align: center;
+    }
 }
 @media screen and (max-width:568px){
     .ps_bot {
@@ -3722,10 +3818,26 @@ img.recovery-partner-img {
     .ps_bot .pack_inner h3 {
         font-size: 46px;
     }
+    .dpn_page .accordion-button::after, .dpn_page .accordion-button:not(.collapsed)::after, .dpn_page .service .accordion-button::after, .dpn_page .service .accordion-button:not(.collapsed)::after {
+        width: 24px;
+        height: 24px;
+    }
+    .dpn_page .accordion-button {
+        font-size: 30px !important;
+        padding-left: 40px;
+    }
 }
 @media screen and (max-width:533px){
     .ps_bot h2 {
         font-size: 22px;
+    }
+}
+@media screen and (max-width:480px){
+    .dpn_page .accordion-button {
+        font-size: 26px !important;
+    }
+    .dpn_page .accordion-button:after {
+        top: 5px;
     }
 }
 @media screen and (max-width:414px){
