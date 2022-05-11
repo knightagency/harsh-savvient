@@ -25,7 +25,7 @@ const Container = (props) => {
     function animatebodymovin(duration) {
       if (window.outerWidth < 992) {
         setIsMobile(true);
-        if(window.scrollY>1600){
+        if(window.scrollY>1900){
           var div = document.getElementsByClassName('accordion-collapse');
           var div2 = document.getElementsByClassName('accordion-button');
           for (let i = 0; i < div.length; i++) {
@@ -34,7 +34,8 @@ const Container = (props) => {
           for (let i = 0; i < div2.length; i++) {
             div2[i].classList.add('collapsed');
           }
-
+        }
+        if(window.scrollY>1600){
           const scrollPosition = window.scrollY-1600;
           const maxFrames = anim.totalFrames;
           setHeight(scrollPosition);
