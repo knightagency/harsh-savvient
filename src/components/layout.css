@@ -3839,6 +3839,9 @@ img.recovery-partner-img {
     .dpn_page .accordion-button:after {
         top: 5px;
     }
+    .dpn_slider .btn {
+        padding: 8px 20px 5px;
+    }
 }
 @media screen and (max-width:414px){
     .ps_bot h2 {
