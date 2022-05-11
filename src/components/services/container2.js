@@ -25,7 +25,7 @@ const Container = (props) => {
     function animatebodymovin(duration) {
       if (window.outerWidth < 992) {
         setIsMobile(true);
-        if(window.scrollY>1900){
+        if(window.scrollY>1600){
           var div = document.getElementsByClassName('accordion-collapse');
           var div2 = document.getElementsByClassName('accordion-button');
           for (let i = 0; i < div.length; i++) {
@@ -35,7 +35,7 @@ const Container = (props) => {
             div2[i].classList.add('collapsed');
           }
 
-          const scrollPosition = window.scrollY-1900;
+          const scrollPosition = window.scrollY-1600;
           const maxFrames = anim.totalFrames;
           setHeight(scrollPosition);
           const frame = (maxFrames / 1) * (scrollPosition / (duration / 1));
@@ -75,7 +75,7 @@ const Container = (props) => {
     const onBtnClick = (e) => {
       if (window.outerWidth < 992) {
         if(e.target.id=='slide0'){
-          window.scrollTo({top: 800+2200, left: 0, behavior: 'smooth' });
+          window.scrollTo({top: 650+2200, left: 0, behavior: 'smooth' });
         }
         if(e.target.id=='slide1'){
           window.scrollTo({top: 1500+2200, left: 0, behavior: 'smooth' });
@@ -84,7 +84,7 @@ const Container = (props) => {
           window.scrollTo({top: 2600+2200, left: 0, behavior: 'smooth' });
         }
         if(e.target.id=='slide3'){
-          window.scrollTo({top: 5498, left: 0, behavior: 'smooth' });
+          window.scrollTo({top: 5300, left: 0, behavior: 'smooth' });
         }
         if(e.target){console.log(window.scrollY)
           if(e.target.tagName=='path' && window.scrollY>2500 && window.scrollY<3000){
@@ -145,10 +145,10 @@ const Container = (props) => {
         <div className="justify-content-center serviceBtn-container">
           <ul className="service-option-container service_menu" id="service-option-container">
             <li className="service-option">
-              <button className={sheight<=1200?"btn sliderBtn active":"btn sliderBtn"} id={"slide0"}>Liquidation</button>
+              <button className={sheight<=1500?"btn sliderBtn active":"btn sliderBtn"} id={"slide0"}>Liquidation</button>
             </li>
             <li className="service-option">
-              <button className={sheight<=2400 && sheight>1200?"btn sliderBtn active":"btn sliderBtn"} id={"slide1"}>Restructure & turnaround</button>
+              <button className={sheight<=2400 && sheight>1500?"btn sliderBtn active":"btn sliderBtn"} id={"slide1"}>Restructure & turnaround</button>
             </li>
             <li className="service-option">
               <button className={sheight<=3300 && sheight>2400?"btn sliderBtn active":"btn sliderBtn"} id={"slide2"}>Administration</button>

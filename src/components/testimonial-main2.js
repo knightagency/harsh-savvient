@@ -26,7 +26,7 @@ const TestimonialMain = (props) => {
 
 
   }, []);
-  return <section className={sheight>2100 && sheight<5617?'testimonial-main why-mg-fixed':'testimonial-main'}>
+  return <section className={sheight>2100 && sheight<5417?'testimonial-main why-mg-fixed':'testimonial-main'}>
     <div className="container">
         {props.data.map((d, i) => {
           return (<div className={i%2 !== 0 ? "row flex-row-reverse" : "row"}>
