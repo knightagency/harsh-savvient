@@ -73,29 +73,48 @@ const Container = (props) => {
     };
 
     const onBtnClick = (e) => {
-      if(e.target.id=='slide0'){
-        window.scrollTo({top: 900+2200, left: 0, behavior: 'smooth' });
-      }
-      if(e.target.id=='slide1'){
-        window.scrollTo({top: 1700+2200, left: 0, behavior: 'smooth' });
-      }
-      if(e.target.id=='slide2'){
-        window.scrollTo({top: 2800+2200, left: 0, behavior: 'smooth' });
-      }
-      if(e.target.id=='slide3'){
-        window.scrollTo({top: 3700+2200, left: 0, behavior: 'smooth' });
-      }
-      if(e.target){
-        if (e.target.href) {
-          if(e.target.href.animVal=='images/img_2.jpg'){
-            navigate('/corporate-advisory/');
+      if (window.outerWidth < 992) {
+        if(e.target.id=='slide0'){
+          window.scrollTo({top: 800+2200, left: 0, behavior: 'smooth' });
+        }
+        if(e.target.id=='slide1'){
+          window.scrollTo({top: 1500+2200, left: 0, behavior: 'smooth' });
+        }
+        if(e.target.id=='slide2'){
+          window.scrollTo({top: 2600+2200, left: 0, behavior: 'smooth' });
+        }
+        if(e.target.id=='slide3'){
+          window.scrollTo({top: 5498, left: 0, behavior: 'smooth' });
+        }
+        if(e.target){console.log(window.scrollY)
+          if(e.target.tagName=='path' && window.scrollY>2500 && window.scrollY<3000){
+            navigate('/liquidation/');
+          }
+          else if(e.target.tagName=='path' && window.scrollY>3200 && window.scrollY<6114){
+            navigate('/director-penalty-notice/#get-in-touch');
           }
         }
-        else if(e.target.tagName=='path' && window.scrollY>1200 && window.scrollY<2500){
-          navigate('/restructuring/');
+      }
+      else{
+        if(e.target.id=='slide0'){
+          window.scrollTo({top: 900+2200, left: 0, behavior: 'smooth' });
         }
-        else if(e.target.tagName=='path' && window.scrollY>2500 && window.scrollY<3000){
-          navigate('/insolvency/');
+        if(e.target.id=='slide1'){
+          window.scrollTo({top: 1700+2200, left: 0, behavior: 'smooth' });
+        }
+        if(e.target.id=='slide2'){
+          window.scrollTo({top: 2800+2200, left: 0, behavior: 'smooth' });
+        }
+        if(e.target.id=='slide3'){
+          window.scrollTo({top: 3700+2200, left: 0, behavior: 'smooth' });
+        }
+        if(e.target){console.log(window.scrollY)
+          if(e.target.tagName=='path' && window.scrollY>2900 && window.scrollY<3200){
+            navigate('/liquidation/');
+          }
+          else if(e.target.tagName=='path' && window.scrollY>3200 && window.scrollY<6114){
+            navigate('/director-penalty-notice/#get-in-touch');
+          }
         }
       }
     };
