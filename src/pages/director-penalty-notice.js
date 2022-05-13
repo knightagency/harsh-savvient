@@ -78,7 +78,7 @@ const DirectorPenaltyNotice = ({data}) => {
                    <h2 class="ins-banner-heading2">{data.wpPage.directorpenaltynoticePageOptions.title1}</h2>
                    <div class="ins-banner-details2"><div dangerouslySetInnerHTML={{__html: data.wpPage.directorpenaltynoticePageOptions.description1 }} /></div>
                     
-                   <Link className="btn btn-primary me-5"  target="_blank" to="https://calendly.com/davidhill-mackaygoodwin/30min?month=2022-03">Learn More</Link>
+                   <Link className="btn btn-primary me-5" to="#get-in-touch">Learn More</Link>
                 </div>
              </div>
           </div>

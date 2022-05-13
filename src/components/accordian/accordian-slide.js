@@ -1,7 +1,17 @@
 import * as React from "react"
 import { Link } from "gatsby"
-const AccordianSlide = (props) => (
-  <div className="accordion-item" key={props.keyloc}>
+const AccordianSlide = (props) => {
+  React.useEffect(() => {
+    if(window.location.hash=='#heading3'){
+      document.getElementById('heading3').children[0].classList.remove('collapsed');
+      document.getElementById('heading3').nextSibling.classList.add('show');
+    }
+
+    return () => {
+
+    };
+  });
+  return <div className="accordion-item" key={props.keyloc}>
     <h3 className="accordion-header" id={"heading" + props.keyloc}>
       <button
         className="accordion-button collapsed"
@@ -23,6 +33,6 @@ const AccordianSlide = (props) => (
       </div>
     </div>
   </div>
-)
+}
 
 export default AccordianSlide

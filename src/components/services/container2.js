@@ -110,11 +110,17 @@ const Container = (props) => {
           window.scrollTo({top: 3700+2200, left: 0, behavior: 'smooth' });
         }
         if(e.target){console.log(window.scrollY)
-          if(e.target.tagName=='path' && window.scrollY>2900 && window.scrollY<3200){
+          if(e.target.tagName=='path' && window.scrollY>2700 && window.scrollY<3700){
             navigate('/liquidation/');
+          }          
+          else if(e.target.tagName=='path' && window.scrollY>3700 && window.scrollY<4600){
+            navigate('/restructuring/');
           }
-          else if(e.target.tagName=='path' && window.scrollY>3200 && window.scrollY<6114){
-            navigate('/director-penalty-notice/#get-in-touch');
+          else if(e.target.tagName=='path' && window.scrollY>4600 && window.scrollY<5600){
+            navigate('/restructuring/#heading3');
+          }
+          else if(e.target.tagName=='path' && window.scrollY>5600 && window.scrollY<6710){
+            navigate('/insights/voluntary-administration/#doca');
           }
         }
       }
