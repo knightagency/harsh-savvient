@@ -55,7 +55,7 @@ module.exports = {
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-force-trailing-slashes`,
-    `gatsby-plugin-no-index`
+    // `gatsby-plugin-no-index`
     // {
     //   resolve: "gatsby-plugin-google-tagmanager",
     //   options: {
