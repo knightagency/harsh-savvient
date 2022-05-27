@@ -23,7 +23,7 @@ const EventsList = (props) => {
           <div className="py-4 px-4" dangerouslySetInnerHTML={{ __html: props.data.excerpt }}></div>
           {/* <p className="pt-4 px-4">{props.data.excerpt}</p> */}
           {props.data.eventsOption?.eventStatus != 'enablevideoaccess' ?
-            <a className="bt-big px-4 mx-4" href={props.data.eventsOption?.registerUrl}>{props.data.eventsOption?.buttonLabel} <i className="fa fa-chevron-right" aria-hidden="true"></i></a>
+            props.data.eventsOption?.registerUrl ? <a className="bt-big px-4 mx-4" href={props.data.eventsOption?.registerUrl}>{props.data.eventsOption?.buttonLabel} <i className="fa fa-chevron-right" aria-hidden="true"></i></a> : null
             :
             <a className="bt-big px-4 mx-4" href="javascript:void(0)" onClick={()=>props.setVideoUrl(props.data.eventsOption?.recordingUrl?.url?props.data.eventsOption?.recordingUrl?.url:props.data.eventsOption.video?.mediaItemUrl,props.data.eventsOption?.recordingUrl?.url?0:1)}>{props.data.eventsOption?.buttonLabel} <i className="fa fa-chevron-right" aria-hidden="true"></i></a>
             // <Link className="bt-big px-4 mx-4" to={props.data.eventsOption?.recordingUrl?.url}>{props.data.eventsOption?.buttonLabel} <i className="fa fa-chevron-right" aria-hidden="true"></i></Link>
