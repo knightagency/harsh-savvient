@@ -13,6 +13,10 @@ import Services from "../components/services/container2"
 import GetInTouch from "../components/get-in-touch"
 
 const DirectorPenaltyNotice = ({data}) => {
+   let whyMG = [];
+  data.wpPage.directorpenaltynoticePageOptions.queAndAns.map((d) => {
+    return whyMG.push({ title: d.question, description: d.answer });
+  })
   let businessData = [];
   data.allWpOurpeople.nodes.map((d) => {
     return businessData.push({ title: d.title, subtitle: d.backInBusiness.designation, text: d.backInBusiness.location, certification: d.backInBusiness.certification, content: d.content, linkedin: d.backInBusiness.linkedin, email: d.backInBusiness.email, phone: d.backInBusiness.phoneNumber, img: d.featuredImage?.node, designationType: d.backInBusiness.designationType, registeredLiquidators: d.backInBusiness.registeredLiquidators });
@@ -40,31 +44,35 @@ const DirectorPenaltyNotice = ({data}) => {
   return (<Layout>
     <Seo title="DirectorPenaltyNotice" />
     <div class="dpn_page">
-      <section id="banner-section" class="identi_bannersec dpn_bannersection">
+      <section class="dpnbanner_sec dpnbanner_sec1">
      <div class="container position-relative">
      <div class="row">
-       <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5">
+       <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7">
           <div class="banner-content innerpage-banner">
              <h1 class="banner-heading">{data.wpPage.directorpenaltynoticePageOptions.title}</h1>
               
-             <div class="banner-desc d-none d-sm-none d-md-none d-lg-block">
+             <div class="banner-desc">
              
              <div dangerouslySetInnerHTML={{__html: data.wpPage.directorpenaltynoticePageOptions.description }} />
              </div>
           </div>
        </div>
-       <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5">
-          <div class="banner-image">
-             <img src={data.wpPage.directorpenaltynoticePageOptions.banner.mediaItemUrl} alt="data.wpPage.directorpenaltynoticePageOptions.banner.altText" />
-          </div>
-          <div class="col-12 d-block d-sm-block d-md-block d-lg-none banner-mdesc">
-             <div class="banner-desc"><div dangerouslySetInnerHTML={{__html: data.wpPage.directorpenaltynoticePageOptions.description }} /></div>
-
-          </div>
+       <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5  d-none d-sm-none d-md-none d-lg-block">
+           <GetInTouch
+          title={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchTitle}
+          text={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchDescription}
+        />
        </div>
     </div>
     </div>
-    </section>
+    </section>   <section class="dpnbanner_sec d-md-block d-lg-none dpnbnr_form">
+           <div class="container position-relative"><div class="bnr_form">
+               <GetInTouch
+              title={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchTitle}
+              text={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchDescription}
+            />
+           </div> </div> 
+           </section>   
       <section id="vCFO" class="banners curve-left bhc_sec wdpn_section">
        <div class="container">
           <div class="row">
@@ -102,7 +110,12 @@ const DirectorPenaltyNotice = ({data}) => {
       <TestimonialMain
         data={data.wpPage.directorpenaltynoticePageOptions.testimonialTest}
       />
-
+       <Accordian
+        title={''}
+        showEnquireButton={false}
+        data={whyMG}
+        isPage={'dpn'}
+      />
       <section className="recovery-partner dpn_rp_sec">
         <div className="container">
           <div className="row">
@@ -123,6 +136,7 @@ const DirectorPenaltyNotice = ({data}) => {
         </div>
       </section>
 
+     
       <div class="mgway">
 
       <OurPeople
@@ -174,6 +188,10 @@ export const query = graphql`
             altText
             mediaItemUrl
           }
+        }
+        queAndAns {
+          answer
+          question
         }
         recoveryTaglineNew
         partnerNew {

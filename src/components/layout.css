@@ -433,17 +433,22 @@ div#accordionExample .accordion-item:nth-last-of-type(1) {
 
 .service .accordion-button:not(.collapsed),
 .service .accordion-button:focus,
-.service .accordion-button:hover {
+.service .accordion-button:hover,
+.dpnfaq .accordion-button:not(.collapsed),
+.dpnfaq .accordion-button:focus,
+.dpnfaq .accordion-button:hover {
     color: #1C5E48
 }
 
-.service .accordion-button::after {
+.service .accordion-button::after,
+.dpnfaq .accordion-button::after {
     background-image: url(../images/plus-black.svg);
     width: 55px;
     height: 55px;
 }
 
-.service .accordion-button:not(.collapsed)::after {
+.service .accordion-button:not(.collapsed)::after,
+.dpnfaq .accordion-button:not(.collapsed)::after {
     background-image: url(../images/minus-black.svg);
     width: 55px;
     height: 55px;
@@ -3277,6 +3282,156 @@ img.recovery-partner-img {
     margin: 0;
     line-height: 1.2;
 }
+.dpnbanner_sec {
+    background: url(../images/dpn_banner.jpg);
+    margin-top: 9px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.dpnbanner_sec .row{
+     -webkit-box-align: flex-end;
+    -webkit-align-items: flex-end;
+        -ms-flex-align: flex-end;
+            align-items: flex-end;
+}
+.dpnbanner_sec:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 747px;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.dpnbanner_sec h1.banner-heading {
+    color: #ffffff;
+}
+.dpnbanner_sec #get-in-touch h3{ display: none; }
+.dpnbanner_sec #get-in-touch{
+    border-top: 4px solid #1d5e48;
+    padding: 41px 57px 50px;
+    box-shadow: 0 13px 39px rgba(0, 0, 0, 0.19);
+        max-width: 497px;
+    float: right;
+}
+.dpnbanner_sec #get-in-touch h2 {
+    color: #000000;
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+.dpnbanner_sec #get-in-touch .container {
+    width: 100%;
+    padding: 0;
+}
+.dpnbanner_sec #get-in-touch .col-md-8 {
+    margin: 0 !important;
+    width: 100%;
+    display: block !important;
+    padding: 0;
+}
+.dpnbanner_sec #get-in-touch br{ display: none; }
+.dpnbanner_sec #get-in-touch .col-12 {
+    padding: 0;
+    display: block;
+}
+.dpnbanner_sec .position-relative {
+    z-index: 1;
+}
+#get-in-touch ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.dpnbanner_sec #get-in-touch ul{ margin: 0 -7.5px; }
+.dpnbanner_sec #get-in-touch li:first-child,
+.dpnbanner_sec #get-in-touch li:nth-child(2),
+.dpnbanner_sec #get-in-touch li:nth-child(4),
+.dpnbanner_sec #get-in-touch li:nth-child(5){
+    width: 50%;
+    float: left;
+}
+.dpnbanner_sec #get-in-touch input,
+.dpnbanner_sec #get-in-touch textarea, 
+.dpnbanner_sec #get-in-touch select {
+    margin: 0;
+    border-bottom: 1px solid #000000;
+    font-size: 15px;
+    letter-spacing: 0.15px;
+    width: 100%;
+        color: #000;
+    padding: 11px 0;
+    line-height: normal;
+}
+.dpnbanner_sec #get-in-touch li{
+    padding: 0 7.5px; margin-bottom: 28px;
+}
+.dpnbanner_sec #get-in-touch input::-webkit-input-placeholder { /* Edge */
+  color: #000;
+}
+
+.dpnbanner_sec #get-in-touch input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #000;
+}
+
+.dpnbanner_sec #get-in-touch input::placeholder {
+  color: #000;
+}
+.dpnbanner_sec #get-in-touch label {
+    margin: 0 0 8px 0;
+    font-size: 15px;
+    color: #000000;
+    letter-spacing: 0.15px;
+    line-height: normal;
+}
+.dpnbanner_sec #get-in-touch textarea {
+    min-height: 90px;
+    border: 1px solid #000000;
+    padding: 15px;
+    color: #646464;
+    height: auto;
+}
+.dpnbanner_sec #get-in-touch li:last-child {
+    margin-bottom: 0;
+}
+.dpnbanner_sec #get-in-touch button.btn.btn-primary.d-block {
+    margin: 0;
+}
+.dpnbanner_sec .banner-content .banner-desc{
+        color: #ffffff;
+        max-width: 495px;
+}
+.dpn_page .dpnfaq .accordion-button:after{
+       left: auto;
+    right: 0;
+} 
+.dpn_page #why-mg.dpnfaq {
+    background-color: rgba(45,45,45,.15);
+}
+.dpn_page .dpnfaq .accordion-button{ color: #000; 
+    font-size: 48px;
+    line-height: 64px;
+    padding-left: 0;padding-right: 150px;
+}
+.dpnfaq .accordion-item {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #2d2d2d;
+}
+.dpnfaq .accordion-button:focus,
+.dpnfaq .accordion-button:hover,
+.dpnfaq .accordion-button:not(.collapsed) {
+    color: #1c5e48;
+}
+.dpnfaq .accordion-collapse.collapse.show {
+    border-top: 1px solid #2d2d2d;
+}
+.dpnfaq .accordion-body div, .dpnfaq .accordion-body p {
+    color: #2d2d2d;
+}
 /****** BreakPoints *******/
 /****** Responsive Start *******/
 @media screen and (min-width:1400px){
@@ -3325,6 +3480,12 @@ img.recovery-partner-img {
     .ps_bot .pack_inner ul {
         padding-top: 25px;
         margin-top: 25px;
+    }
+    .dpnbanner_sec h1.banner-heading{
+        font-size: 40px;
+    }
+    .dpn_page .dpnfaq .accordion-button{
+            font-size: 45px;
     }
 }
 @media screen and (max-width:1400px){
@@ -3491,6 +3652,19 @@ img.recovery-partner-img {
     .dpn_rp_sec .recovery-partner-title {
         font-size: 20px;
         line-height: 1.3;
+    }
+    .dpnbanner_sec #get-in-touch{
+        padding: 30px 45px 37px;
+    }
+    .dpnbanner_sec h1.banner-heading {
+    color: #ffffff;
+    font-size: 37px;
+    margin-bottom: 0;
+    line-height: normal;
+    }
+    .dpn_page .dpnfaq .accordion-button{
+            font-size: 39px;
+    line-height: 53px;
     }
 }
 
@@ -3697,6 +3871,42 @@ img.recovery-partner-img {
     .dpn_rp_sec .whyTitle {
         font-size: 36px;
     }
+    .dpnbanner_sec1 {
+        margin-top: 40px;
+    }
+    .dpnbanner_sec1 .banner-content.innerpage-banner {
+    margin-bottom: 0;
+    padding: 25px;
+    background: rgba(0,0,0,0.59);
+    }
+    .dpnbanner_sec h1.banner-heading {
+        font-size: 37px;
+    }
+    .dpnbanner_sec:after{ content: none; }
+    .dpnbanner_sec{ overflow: hidden; }
+    .dpnbnr_form {
+        background: #fff;    padding-bottom: 0;
+    }
+    .dpnbanner_sec #get-in-touch {
+    padding: 36px 45px 44px;
+    max-width: 400px;
+    float: none;
+    width: 100%;
+    margin: auto;
+    box-shadow: none;
+    }
+    .dpnbanner_sec #get-in-touch h2{
+            font-size: 25px;
+    }
+    .dpnbanner_sec .banner-content .banner-desc{
+            padding: 0;
+    margin-top: 11px;
+    }
+    .dpn_page .dpnfaq .accordion-button {
+    font-size:39px;
+    padding-right: 95px;
+    line-height: 50px;
+    }
 }
 @media screen and (max-width:767px){
 
@@ -3785,6 +3995,12 @@ img.recovery-partner-img {
     .slider_height.dpn_slider {
         height: 4130px;
     }
+    .dpnbanner_sec h1.banner-heading {
+        font-size: 34px;
+    }
+    .dpn_page .dpnfaq .accordion-button{
+            line-height: 42px;
+    }
 }
 @media screen and (max-width:667px){
     .ol_list h2 {
@@ -3841,6 +4057,21 @@ img.recovery-partner-img {
     }
     .dpn_slider .btn {
         padding: 8px 20px 5px;
+    }
+
+}
+@media screen and (max-width:440px){
+    .dpnbanner_sec h1.banner-heading {
+        font-size: 29px;
+    }
+    .dpnbanner_sec .banner-content .banner-desc {
+    font-size: 16px;
+    line-height: 25px;
+    }
+    .dpnbanner_sec #get-in-touch {
+    padding: 26px 31px 41px;}
+    .dpn_page .dpnfaq .accordion-button {
+            padding-right: 44px;line-height: 33px;
     }
 }
 @media screen and (max-width:414px){
@@ -3970,8 +4201,8 @@ img.recovery-partner-img {
     .accordion-button:not(.collapsed)::after,
     .service .accordion-button::after,
     .service .accordion-button:not(.collapsed)::after {
-        width: 32px;
-        height: 32px;
+        width: 32px !important;
+        height: 32px !important;
     }
     .accordion-body p, .accordion-body div {
         font-size: 16px;
@@ -4762,6 +4993,7 @@ button.btn-close {
     display: block;
     animation: fadeIn .5s forwards;
 }
+
 @media only screen and (max-width: 991.98px) {
     .modal .detail {
         padding: 0 ;

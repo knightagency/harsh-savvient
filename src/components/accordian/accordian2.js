@@ -11,7 +11,7 @@ const Accordian = (props) => {
   }, []);
 
 
-  return <section id="why-mg">
+  return <section id="why-mg" className={props?.isPage=='dpn'?'dpnfaq':''}>
     <div className="container">
       {props.title && props.title !== '' ? <div className="row">
         <div className="col">
@@ -29,8 +29,8 @@ const Accordian = (props) => {
                 title={d.title}
                 text={d.description}
                 tag={d.tag}
-                keyloc={key}
-                key={key}
+                keyloc={props?.isPage?props.isPage+key:key}
+                key={props?.isPage?props.isPage+key:key}
               />
             })}
           </div>
