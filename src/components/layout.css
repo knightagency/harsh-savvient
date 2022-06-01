@@ -4993,7 +4993,9 @@ button.btn-close {
     display: block;
     animation: fadeIn .5s forwards;
 }
-
+#why-mg.dpnfaq h2 {
+    color: #000;
+}
 @media only screen and (max-width: 991.98px) {
     .modal .detail {
         padding: 0 ;
