@@ -111,7 +111,7 @@ const DirectorPenaltyNotice = ({data}) => {
         data={data.wpPage.directorpenaltynoticePageOptions.testimonialTest}
       />
        <Accordian
-        title={''}
+        title={data.wpPage.directorpenaltynoticePageOptions.faqTitle}
         showEnquireButton={false}
         data={whyMG}
         isPage={'dpn'}
@@ -189,6 +189,7 @@ export const query = graphql`
             mediaItemUrl
           }
         }
+        faqTitle
         queAndAns {
           answer
           question
