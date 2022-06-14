@@ -3432,6 +3432,18 @@ img.recovery-partner-img {
 .dpnfaq .accordion-body div, .dpnfaq .accordion-body p {
     color: #2d2d2d;
 }
+.dp_btn a {
+    border-radius: 50px;
+    background-color: #1C5E48;
+    border: none;
+    width: auto;
+    padding: 12px 30px;
+    margin-top: 38px;
+    font-family: 'Sohne', sans-serif, Arial;
+    color: #fff;
+    margin-top: 10px;
+    display: inline-block;
+}
 /****** BreakPoints *******/
 /****** Responsive Start *******/
 @media screen and (min-width:1400px){
