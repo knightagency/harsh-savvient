@@ -20,7 +20,7 @@ const EventsList = (props) => {
         <div className="col-lg-8 my-3">
           <h4 className="px-4 mb-4">{props.data.title} </h4>
           <span className="px-4">{dateFormat(dateFormatChange(props.data.eventsOption?.eventDate), 'mmmm dS, yyyy, h:MM TT')}</span>
-          <div className="py-4 px-4" dangerouslySetInnerHTML={{ __html: props.data.excerpt }}></div>
+          {props.data.eventsOption?.shortDescription !=null?<div className="py-4 px-4" dangerouslySetInnerHTML={{ __html: props.data.eventsOption?.shortDescription }}></div>:<div className="py-4 px-4" dangerouslySetInnerHTML={{ __html: props.data.excerpt }}></div>}
           {/* <p className="pt-4 px-4">{props.data.excerpt}</p> */}
           {props.data.eventsOption?.eventStatus != 'enablevideoaccess' ?
             props.data.eventsOption?.registerUrl ? <a className="bt-big px-4 mx-4" href={props.data.eventsOption?.registerUrl}>{props.data.eventsOption?.buttonLabel} <i className="fa fa-chevron-right" aria-hidden="true"></i></a> : null

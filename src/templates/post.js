@@ -88,7 +88,6 @@ const Post = ({ data }) => {
           </div>
         </div>
       </div>
-      <div dangerouslySetInnerHTML={{ __html: data.wpPost.backInBusiness?.shortDescription }}></div>
       {data.wpPost.backInBusiness?.eventGallery!=null?
       <div className="eventgallery_sec">
         <div className="container">

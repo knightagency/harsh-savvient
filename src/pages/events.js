@@ -122,7 +122,8 @@ export const query = graphql`
           },
           video {
             mediaItemUrl
-          }
+          },
+          shortDescription
         }
       }
     }
