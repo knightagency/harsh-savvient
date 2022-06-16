@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-
+import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import TopBanner from "../components/top-banner"
@@ -23,6 +23,14 @@ import GetInTouchPDF from "../components/get-in-touch-pdf"
 // ]
 
 const Post = ({ data }) => {
+  const [glimit,setLimit] = React.useState(6);
+  const [showLm,setLm] = React.useState(true);
+  const loadMore = () => {
+    setLimit(glimit+6);
+    if((glimit+6)>=data.wpPost.backInBusiness.eventGallery.length){
+      setLm(false);
+    }
+  }
   let breadCrumbs = [
     { link: "/", title: "Home" },
     { title: data.wpPost?.title }
@@ -80,6 +88,30 @@ const Post = ({ data }) => {
           </div>
         </div>
       </div>
+      <div dangerouslySetInnerHTML={{ __html: data.backInBusiness?.shortDescription }}></div>
+      <div className="eventgallery_sec">
+        <div className="container">
+            <ul>
+            {data.wpPost.backInBusiness.eventGallery.map((d,key) => {
+              return key<glimit?<li key={key}><div className="event_gsthum"><img src={d.eventGalleryImage.mediaItemUrl} alt={d.eventGalleryImage.altText} /></div></li>:null
+            })}
+            </ul>
+            <div className="me-5 text_center">
+              {showLm?<button className="btn btn-primary " onClick={()=>loadMore()}>View More</button>:null}
+            </div>
+        </div>
+      </div>
+      <div className="sponser_sec">
+        <div className="container">
+        <h2>Thank you to our sponsors for your support!</h2>
+          <ul>
+            {data.wpPost.backInBusiness.sponsorsLogo.map((d,key) => {
+              return <li key={key}><Link target="_blank" to={d.sponsorsLogoLink}><img src={d.sponsorsLogoImage.mediaItemUrl} alt={d.sponsorsLogoImage.altText} /> </Link> </li>
+            })}
+          </ul>
+        </div>
+      </div>
+
       {typeof window !== "undefined" && window.location.pathname.indexOf("/insights/business-survival-pack") >= 0 && <GetInTouchPDF
         title={'Download e-guide'}
         text={'Download your free copy today and get on the path to recovery'}
@@ -150,6 +182,20 @@ query ($id: String) {
         recordingUrl {
           url
         }
+        sponsorsLogo{
+          sponsorsLogoImage{
+            altText
+            mediaItemUrl
+          }
+          sponsorsLogoLink
+        }
+        eventGallery{
+          eventGalleryImage{
+            altText
+            mediaItemUrl
+          }
+        }
+        shortDescription
       }
       featuredImage {
         node {
