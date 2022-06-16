@@ -89,7 +89,7 @@ const Post = ({ data }) => {
         </div>
       </div>
       <div dangerouslySetInnerHTML={{ __html: data.backInBusiness?.shortDescription }}></div>
-      {data.wpPost.backInBusiness.eventGallery!=null?
+      {data.wpPost.backInBusiness?.eventGallery!=null?
       <div className="eventgallery_sec">
         <div className="container">
             <ul>
@@ -103,7 +103,7 @@ const Post = ({ data }) => {
         </div>
       </div>
       :null}
-      {data.wpPost.backInBusiness.sponsorsLogo!=null?
+      {data.wpPost.backInBusiness?.sponsorsLogo!=null?
       <div className="sponser_sec">
         <div className="container">
         <h2>Thank you to our sponsors for your support!</h2>
