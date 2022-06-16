@@ -89,18 +89,21 @@ const Post = ({ data }) => {
         </div>
       </div>
       <div dangerouslySetInnerHTML={{ __html: data.backInBusiness?.shortDescription }}></div>
+      {data.wpPost.backInBusiness.eventGallery!=null?
       <div className="eventgallery_sec">
         <div className="container">
             <ul>
-            {data.wpPost.backInBusiness.eventGallery.map((d,key) => {
+            {data.wpPost.backInBusiness.eventGallery!=null && data.wpPost.backInBusiness.eventGallery.map((d,key) => {
               return key<glimit?<li key={key}><div className="event_gsthum"><img src={d.eventGalleryImage.mediaItemUrl} alt={d.eventGalleryImage.altText} /></div></li>:null
             })}
             </ul>
             <div className="me-5 text_center">
-              {showLm?<button className="btn btn-primary " onClick={()=>loadMore()}>View More</button>:null}
+              {data.wpPost.backInBusiness.eventGallery!=null && showLm?<button className="btn btn-primary " onClick={()=>loadMore()}>View More</button>:null}
             </div>
         </div>
       </div>
+      :null}
+      {data.wpPost.backInBusiness.sponsorsLogo!=null?
       <div className="sponser_sec">
         <div className="container">
         <h2>Thank you to our sponsors for your support!</h2>
@@ -111,7 +114,7 @@ const Post = ({ data }) => {
           </ul>
         </div>
       </div>
-
+      :null}
       {typeof window !== "undefined" && window.location.pathname.indexOf("/insights/business-survival-pack") >= 0 && <GetInTouchPDF
         title={'Download e-guide'}
         text={'Download your free copy today and get on the path to recovery'}
