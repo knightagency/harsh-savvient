@@ -13,6 +13,8 @@ import Accordian from "../components/accordian/accordian"
 import { Link } from "gatsby"
 import CurveLeft from "../components/curve-left"
 import { element } from "prop-types"
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 // const newsData = [
 //   {
 //     "imgSrc":"/images/news.jpeg",
@@ -84,7 +86,13 @@ import { element } from "prop-types"
 // ]
 
 const MgWay = ({ data }) => {
+  let sliderdata = [];
   let whyMG = [];
+  data.wpPage.mgWayPageOptions.communityImages.map((d,k1) => {
+    return sliderdata.push({
+          imgSrc: d.image.mediaItemUrl
+      });
+  });
   data.wpPage.mgWayPageOptions.approachQA.map((d) => {
     console.log(d);
     return whyMG.push({ title: d.question, description: d.answer, tag: d.approachtag });
@@ -168,7 +176,11 @@ const MgWay = ({ data }) => {
           </div>
           <div className="row">
             <div className="col-sm-12 col-md-12 col-lg-6 col-xl-8 image-container">
-              <img className={"img-fluid img-fullwidth"} src={data.wpPage.mgWayPageOptions.communityImage.mediaItemUrl} alt={data.wpPage.mgWayPageOptions.communityImage.altText} />
+            <Carousel showThumbs={false} showIndicators={false} autoPlay={true} dynamicHeight={false} swipeable={true} emulateTouch={true} showStatus={false}>
+                { data.wpPage.mgWayPageOptions.communityImages.map((d) => {
+                  return <div><img src={d.image.mediaItemUrl} /></div>
+                })}
+            </Carousel>
             </div>
             <div className="col-sm-12 col-md-12 col-lg-6 col-xl-4 align-items-center content-container">
               <div className="card-body">
@@ -208,6 +220,8 @@ const MgWay = ({ data }) => {
   </div>
   )
 }
+
+
 export const query = graphql`
   {
     wpPage(title: {eq: "The MG Way"}) {
@@ -243,6 +257,12 @@ export const query = graphql`
         communityImage {
           altText
           mediaItemUrl
+        }
+        communityImages{
+          image{
+            altText
+            mediaItemUrl
+          }
         }
         communityTitle
         contentDesc

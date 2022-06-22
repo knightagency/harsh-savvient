@@ -3507,6 +3507,29 @@ img.recovery-partner-img {
 }
 .text_center{ text-align: center; }
 
+#community-support .slide img {
+    width: auto;
+    max-width: 100%;
+    max-height: 587px;
+}
+#community-support .carousel.carousel-slider .control-arrow {
+    width: 50px;    
+    height: 50px;
+    background-color: #1c5e48;
+    opacity: 1;
+    margin: auto;
+}
+#community-support .carousel.carousel-slider .control-arrow.control-prev {
+    left: 15px;
+}
+#community-support .carousel.carousel-slider .control-arrow.control-next {
+    right: 15px;
+}
+#community-support .image-container {
+    background-color: #f1f0e8;
+    padding-left: 0;
+}
+
 /****** BreakPoints *******/
 /****** Responsive Start *******/
 @media screen and (min-width:1400px){
@@ -3517,6 +3540,11 @@ img.recovery-partner-img {
 @media screen and (min-width:1600px){
     .ps_bot .container {
         max-width: 1546px;
+    }
+}
+@media screen and (max-width:1900px){
+    #community-support .slide img {
+        max-height: 586px;
     }
 }
 @media screen and (max-width:1600px){
@@ -3589,6 +3617,9 @@ img.recovery-partner-img {
     }
     .slider_height.dpn_slider {
         height: 4250px;
+    }
+    #community-support .slide img {
+        max-height: 506px;
     }
 }
 @media screen and (max-width:1300px){
@@ -3744,6 +3775,9 @@ img.recovery-partner-img {
     .eventgallery_sec {
     padding-top: 50px;
     padding-bottom: 50px;
+    }
+    #community-support .slide img {
+        max-height: 320px;
     }
 }
 
@@ -4005,10 +4039,9 @@ img.recovery-partner-img {
     padding: 10px;
     margin: 0 1% 18px;
     }
-
-
-
-
+    #community-support .slide img {
+        max-height: 481px;
+    }
 }
 @media screen and (max-width:767px){
 
@@ -4103,6 +4136,9 @@ img.recovery-partner-img {
     .dpn_page .dpnfaq .accordion-button{
             line-height: 42px;
     }
+    #community-support .slide img {
+        max-height: 360px;
+    }
 }
 @media screen and (max-width:667px){
     .ol_list h2 {
@@ -4144,6 +4180,9 @@ img.recovery-partner-img {
         font-size: 30px !important;
         padding-left: 40px;
     }
+    #community-support .slide img {
+        max-height: 358px;
+    }
 }
 @media screen and (max-width:533px){
     .ps_bot h2 {
@@ -4162,8 +4201,10 @@ img.recovery-partner-img {
     margin: 0 0% 18px;
     }
     .eventgallery_sec ul{
-        
-            margin: 0;
+        margin: 0;
+    }
+    #community-support .slide img {
+        max-height: 333px;
     }
 }
 @media screen and (max-width:480px){
@@ -4176,7 +4217,9 @@ img.recovery-partner-img {
     .dpn_slider .btn {
         padding: 8px 20px 5px;
     }
-
+    #community-support .slide img {
+        max-height: 300px;
+    }
 }
 @media screen and (max-width:440px){
     .dpnbanner_sec h1.banner-heading {
@@ -4196,10 +4239,23 @@ img.recovery-partner-img {
     margin-bottom: 0;
     line-height: normal;
     }
+    #community-support .slide img {
+        max-height: 256px;
+    }
+    #community-support .carousel.carousel-slider .control-arrow {
+        width: 40px;
+        height: 40px;
+        padding: 2px;
+    }
 }
 @media screen and (max-width:414px){
     .ps_bot h2 {
         font-size: 20px;
+    }
+}
+@media screen and (max-width:375px){
+    #community-support .slide img {
+        max-height: 230px;
     }
 }
 
