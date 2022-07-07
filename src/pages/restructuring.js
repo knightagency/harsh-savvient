@@ -26,8 +26,8 @@ import { formHealthContext, formEbookContext } from '../components/context';
 
 const Restructuring = ({ data }) => {
   let whyMG = [];
-  data.wpPage.restructuring.queAndAns.map((d) => {
-    return whyMG.push({ title: d.question, description: d.answer });
+  data.wpPage.restructuring.queAndAnsNew.map((d) => {
+    return whyMG.push({ title: d.questionNew, description: d.answerNew });
   })
   const breadCrumbs = [
     { link: "/", title: "Home" },
@@ -152,11 +152,6 @@ export const query = graphql`
         healthCheckTitle
         buttonLabel
         buttonUrl
-        pageTagline
-        queAndAns {
-          answer
-          question
-        }
         sendUrl
         businessTestimonial {
           comment
@@ -167,6 +162,15 @@ export const query = graphql`
           }
           url
           name
+        }
+        pageTagline
+        queAndAns {
+          question
+          answer
+        }
+        queAndAnsNew {
+          questionNew
+          answerNew
         }
       }
       metaFields {
