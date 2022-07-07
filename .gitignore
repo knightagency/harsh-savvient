@@ -1,0 +1,10 @@
+# Mac files
+.DS_Store
+
+# Dependency directories
+/node_modules
+
+# public
+/public
+/.cache
+/node_modules.rar

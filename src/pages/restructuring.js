@@ -164,10 +164,6 @@ export const query = graphql`
           name
         }
         pageTagline
-        queAndAns {
-          question
-          answer
-        }
         queAndAnsNew {
           questionNew
           answerNew
