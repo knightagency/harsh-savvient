@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-
+import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import TopBanner from "../components/top-banner"
@@ -44,6 +44,28 @@ const Corporate = ({ data }) => {
         showEnquireButton={true}
         data={whyMG}
       />
+
+      <section class="sec_links">
+      <div class="container position-relative">
+       <div class="row">
+         <div class="col-sm-12">
+          <ul class="d-flex justify-content-center">
+            <li>
+             <Link to="#capability">Capability Statement</Link> 
+            </li>
+            <li>
+             <Link to="#financial">New Financial Year Guide</Link> 
+            </li>
+              <li>
+               <Link to="#vCFO">Virtual Chief Financial Officer (vCFO)</Link> 
+            </li>
+          </ul>
+          </div>
+          </div>
+        </div>
+    </section>
+
+    <a id="capability"></a>
       <formDetailContext.Provider value={value}>
         <CurveLeft
           title={data.wpPage.corporateAdvisoryPageOptions?.croTitle}
@@ -58,7 +80,7 @@ const Corporate = ({ data }) => {
           text={'Download your free copy today and get on the path to recovery'}
         />
       </formDetailContext.Provider>
-
+      <a id="financial"></a>
       <formDetailContext.Provider value={value}>
         <CurveLeft
           title={data.wpPage.corporateAdvisoryPageOptions?.newFinancialTitle}
