@@ -8,6 +8,7 @@ import CurveLeft from "../components/curve-left"
 import GetInTouch from "../components/get-in-touch"
 import Accordian from "../components/accordian/accordian"
 import CapabilityForm from "../components/capability-form"
+import CapabilityFormNew from "../components/capability-form-new"
 import FullText from "../components/full-text"
 import { formDetailContext } from '../components/context';
 
@@ -57,6 +58,22 @@ const Corporate = ({ data }) => {
           text={'Download your free copy today and get on the path to recovery'}
         />
       </formDetailContext.Provider>
+
+      <formDetailContext.Provider value={value}>
+        <CurveLeft
+          title={data.wpPage.corporateAdvisoryPageOptions?.newFinancialTitle}
+          text={data.wpPage.corporateAdvisoryPageOptions?.newFinancialDesc}
+          img={data.wpPage.corporateAdvisoryPageOptions?.newFinancialImage}
+          btnTxt={'Download Now'}
+          btnLink={""}
+          btnClick={() => { setFormDetails(1) }}
+        />
+        <CapabilityFormNew
+          title={'Download New Financial Year Guide'}
+          text={'Download your free copy today and get on the path to recovery'}
+        />
+      </formDetailContext.Provider>
+
       <CurveLeft
         id={'vCFO'}
         title={data.wpPage.corporateAdvisoryPageOptions.cfoTitle}
@@ -89,6 +106,13 @@ export const query = graphql`
           altText
           mediaItemUrl
         }
+        newFinancialTitle
+        newFinancialDesc
+        newFinancialImage {
+          altText
+          mediaItemUrl
+        }
+        newFinancialEnquireLink
         bannerSubtitle
         bannerTitle
         fieldGroupName
