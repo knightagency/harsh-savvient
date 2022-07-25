@@ -11,6 +11,7 @@ import useInView from "react-cool-inview";
 import OurPeople from "../components/our-people-list/our-people2"
 import Services from "../components/services/container2"
 import GetInTouch from "../components/get-in-touch"
+import GetInTouch2 from "../components/get-in-touch2"
 
 const DirectorPenaltyNotice = ({data}) => {
    let whyMG = [];
@@ -58,7 +59,7 @@ const DirectorPenaltyNotice = ({data}) => {
           </div>
        </div>
        <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5  d-none d-sm-none d-md-none d-lg-block">
-           <GetInTouch
+           <GetInTouch2
           title={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchTitle}
           text={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchDescription}
         />
@@ -67,7 +68,7 @@ const DirectorPenaltyNotice = ({data}) => {
     </div>
     </section>   <section class="dpnbanner_sec d-md-block d-lg-none dpnbnr_form">
            <div class="container position-relative"><div class="bnr_form">
-               <GetInTouch
+               <GetInTouch2
               title={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchTitle}
               text={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchDescription}
             />

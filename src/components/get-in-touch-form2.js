@@ -61,19 +61,25 @@ const GetInTouchForm = () => {
       <input id="company" maxLength="40" name="company" size="20" type="hidden" value='mackaygoodwin' />
       <input type="hidden" name="oid" value="00D9D0000008gaJ" />
       <input type="hidden" name="retURL" value="https://www.mackaygoodwin.com.au/thank-you/" />
-    
+    <ul>
+     
+      <li>
       <input type="text" name="first-name" placeholder="First Name" className="firstName" required onChange={(e) => { setfName(e.target.value); e.target.value.trim() !== "" ? setShowfName('d-none') : setShowfName('d-block') }} />
       <div className={"alert alert-danger " + showfName} style={fName.trim() !== "" ? { display: "none" } : {}} role="alert">Please enter first name.</div>
-      
+      </li>
+      <li>
       <input type="text" name="surname" placeholder="Surname" className="surName" required onChange={(e) => { setlName(e.target.value); e.target.value.trim() !== "" ? setShowlName('d-none') : setShowlName('d-block') }} />
       <div className={"alert alert-danger " + showlName} style={lName.trim() !== "" ? { display: "none" } : {}} role="alert">Please enter last name.</div>
-      
+      </li>
+      <li>
       <input type="email" name="email" placeholder="Email address" required onChange={(e) => { setEmail(e.target.value); e.target.value.trim() !== "" && re.test(e.target.value) ? setShoweMail('d-none') : setShoweMail('d-block') }} />
       <div className={"alert alert-danger " + showeMail} style={email.trim() !== "" && re.test(email) ? { display: "none" } : {}} role="alert">Please enter valid email address.</div>
-      
+      </li>
+      <li>
       <input type="phone" name="mobile" placeholder="Mobile Number" required onChange={(e) => { setPhone(e.target.value); e.target.value.trim() !== "" && phoneno.test(e.target.value) ? setShowPhone('d-none') : setShowPhone('d-block') }} />
       <div className={"alert alert-danger " + showPhone} style={phone !== "" && phoneno.test(phone) ? { display: "none" } : {}} role="alert">Please enter valid phone.</div>
-      
+      </li>
+      <li>
       <select id="00N9D000002QFLX" placeholder="State" className="stateSelect" name="state" onChange={e => setStateName(e.target.value)}>
         <option value="">State</option>
         <option value="NSW">NSW</option>
@@ -84,7 +90,8 @@ const GetInTouchForm = () => {
         <option value="WA">WA</option>
         <option value="TAS">TAS</option>
       </select>
-      
+      </li>
+      <li>
       <select name="area-help" className="areaSelect" onChange={e => setareaHelp(e.target.value)}>
         <option value="">What area do you need help with?</option>
         <option value="I need help with closing my company/liquidation">I need help with closing my company/liquidation</option>
@@ -92,12 +99,16 @@ const GetInTouchForm = () => {
         <option value="I need help with restructuring ">I need help with restructuring </option>
         <option value="I am not sure what I need">I am not sure what I need</option>
       </select>
-      
+      </li>
+      <li>
       <label htmlFor="tell-us" name="about-situation"> Tell us about your situation</label>
       <textarea name="tell-us" col="10" placeholder="Tell us here..." onChange={e => setAbout(e.target.value)}></textarea>
-      
+      </li>
+      <li>
       <button type="submit" className={"btn btn-primary " + showBtn}>Send</button>
+      </li>
       
+      </ul>
       <div className={"alert alert-success " + showSuccess} role="alert">Thank you for providing the details, we have received it and one of our consultants will be in touch shortly</div>
       <select style={{ display: "none" }} id="lead_source" name="lead_source">
         <option value="Web Form">Web Form</option>
@@ -114,11 +125,11 @@ const GetInTouchForm = () => {
       <input type="hidden" name="debugEmail" value="aqib160492@gmail.com" /> */}
       <textarea style={{ display: "none" }} id="00N9D000002HWRA" name="00N9D000002HWRA" rows="3" type="text" type="hidden" wrap="soft"></textarea>
       <textarea style={{ display: "none" }} id="00N9D000002P0Yi" name="00N9D000002P0Yi" type="hidden" wrap="soft"></textarea>
-      <div style={{ display: "none" }}>
+      <li style={{ display: "none" }}>
         <label htmlFor="comment">Do Not Fill This Out</label>
         <textarea name="comment" id="comment" rows="1" cols="1"></textarea>
         <input type="hidden" id="idstamp" name="idstamp" value="AdmfPXWsLlXnkKsF4I86dZRLcwlp3A3wQSIi4z4ehm8=" />
-      </div>
+      </li>
     </form>
   )
 }

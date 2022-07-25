@@ -2578,6 +2578,10 @@ img.recovery-partner-img {
     float: right;
 }
 
+.form_pp iframe {
+    width: 100%;
+}
+
 .consult-business #get-in-touch textarea{
     height: 100px;
 }

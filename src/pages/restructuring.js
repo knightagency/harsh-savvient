@@ -108,7 +108,6 @@ const Restructuring = ({ data }) => {
         title={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchTitle}
         text={data.allWp.nodes[0].themeGeneralSettings.themeGeneralSettings.getInTouchDescription}
       />
-      {data.wpPage.restructuring.videoButtonLabel}asdfadsf
     </Layout>
   </div>
   )
