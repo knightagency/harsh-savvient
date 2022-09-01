@@ -22,8 +22,8 @@ const CapabilityFormNew = (props) => {
       //creating an invisible element
       var element = document.createElement('a');
       element.setAttribute('href', "/MGNewFinYear–Landscape-v4.pdf");
-      // element.setAttribute('download', "capability");
-      element.setAttribute('target', "_blank");
+      element.setAttribute('download', "New Financial Year Guide");
+      // element.setAttribute('target', "_blank");
       // Above code is equivalent to
       // <a href="path of file" download="file name">
 
